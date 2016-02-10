@@ -7,9 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6FE7F24F1C4FE8B5005CC6F0 /* UnitKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FE7F24E1C4FE8B5005CC6F0 /* UnitKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F0D50921C6B3C7F00AACD41 /* AreaUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0D50871C6B3C7F00AACD41 /* AreaUnit.swift */; };
+		6F0D50931C6B3C7F00AACD41 /* AreaUnitType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0D50881C6B3C7F00AACD41 /* AreaUnitType.swift */; };
+		6F0D50941C6B3C7F00AACD41 /* LengthUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0D50891C6B3C7F00AACD41 /* LengthUnit.swift */; };
+		6F0D50951C6B3C7F00AACD41 /* LengthUnitType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0D508A1C6B3C7F00AACD41 /* LengthUnitType.swift */; };
+		6F0D50961C6B3C7F00AACD41 /* MassUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0D508B1C6B3C7F00AACD41 /* MassUnit.swift */; };
+		6F0D50971C6B3C7F00AACD41 /* MassUnitType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0D508C1C6B3C7F00AACD41 /* MassUnitType.swift */; };
+		6F0D50981C6B3C7F00AACD41 /* VolumeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0D508D1C6B3C7F00AACD41 /* VolumeUnit.swift */; };
+		6F0D50991C6B3C7F00AACD41 /* VolumeUnitType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0D508E1C6B3C7F00AACD41 /* VolumeUnitType.swift */; };
+		6F0D509A1C6B3C7F00AACD41 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0D50901C6B3C7F00AACD41 /* Unit.swift */; };
+		6F0D509B1C6B3C7F00AACD41 /* UnitType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0D50911C6B3C7F00AACD41 /* UnitType.swift */; };
 		6FE7F2561C4FE8B5005CC6F0 /* UnitKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FE7F24B1C4FE8B5005CC6F0 /* UnitKit.framework */; };
-		6FE7F25B1C4FE8B5005CC6F0 /* UnitKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE7F25A1C4FE8B5005CC6F0 /* UnitKitTests.swift */; };
+		6FE7F25B1C4FE8B5005CC6F0 /* MassUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE7F25A1C4FE8B5005CC6F0 /* MassUnitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +32,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6F0D50871C6B3C7F00AACD41 /* AreaUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaUnit.swift; sourceTree = "<group>"; };
+		6F0D50881C6B3C7F00AACD41 /* AreaUnitType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaUnitType.swift; sourceTree = "<group>"; };
+		6F0D50891C6B3C7F00AACD41 /* LengthUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LengthUnit.swift; sourceTree = "<group>"; };
+		6F0D508A1C6B3C7F00AACD41 /* LengthUnitType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LengthUnitType.swift; sourceTree = "<group>"; };
+		6F0D508B1C6B3C7F00AACD41 /* MassUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MassUnit.swift; sourceTree = "<group>"; };
+		6F0D508C1C6B3C7F00AACD41 /* MassUnitType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MassUnitType.swift; sourceTree = "<group>"; };
+		6F0D508D1C6B3C7F00AACD41 /* VolumeUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeUnit.swift; sourceTree = "<group>"; };
+		6F0D508E1C6B3C7F00AACD41 /* VolumeUnitType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeUnitType.swift; sourceTree = "<group>"; };
+		6F0D50901C6B3C7F00AACD41 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
+		6F0D50911C6B3C7F00AACD41 /* UnitType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitType.swift; sourceTree = "<group>"; };
 		6FE7F24B1C4FE8B5005CC6F0 /* UnitKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UnitKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6FE7F24E1C4FE8B5005CC6F0 /* UnitKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnitKit.h; sourceTree = "<group>"; };
-		6FE7F2501C4FE8B5005CC6F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FE7F2551C4FE8B5005CC6F0 /* UnitKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6FE7F25A1C4FE8B5005CC6F0 /* UnitKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitKitTests.swift; sourceTree = "<group>"; };
+		6FE7F25A1C4FE8B5005CC6F0 /* MassUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MassUnitTests.swift; sourceTree = "<group>"; };
 		6FE7F25C1C4FE8B5005CC6F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FE7F26E1C4FF51D005CC6F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FE7F26F1C4FF51D005CC6F0 /* UnitKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnitKit.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +69,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F0D50861C6B3C7F00AACD41 /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				6F0D50871C6B3C7F00AACD41 /* AreaUnit.swift */,
+				6F0D50881C6B3C7F00AACD41 /* AreaUnitType.swift */,
+				6F0D50891C6B3C7F00AACD41 /* LengthUnit.swift */,
+				6F0D508A1C6B3C7F00AACD41 /* LengthUnitType.swift */,
+				6F0D508B1C6B3C7F00AACD41 /* MassUnit.swift */,
+				6F0D508C1C6B3C7F00AACD41 /* MassUnitType.swift */,
+				6F0D508D1C6B3C7F00AACD41 /* VolumeUnit.swift */,
+				6F0D508E1C6B3C7F00AACD41 /* VolumeUnitType.swift */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		6F0D508F1C6B3C7F00AACD41 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				6F0D50901C6B3C7F00AACD41 /* Unit.swift */,
+				6F0D50911C6B3C7F00AACD41 /* UnitType.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		6FE7F2411C4FE8B5005CC6F0 = {
 			isa = PBXGroup;
 			children = (
@@ -71,8 +114,9 @@
 		6FE7F24D1C4FE8B5005CC6F0 /* UnitKit */ = {
 			isa = PBXGroup;
 			children = (
-				6FE7F24E1C4FE8B5005CC6F0 /* UnitKit.h */,
-				6FE7F2501C4FE8B5005CC6F0 /* Info.plist */,
+				6FE7F26E1C4FF51D005CC6F0 /* Info.plist */,
+				6FE7F26F1C4FF51D005CC6F0 /* UnitKit.h */,
+				6FE7F2651C4FE8D3005CC6F0 /* Source */,
 			);
 			path = UnitKit;
 			sourceTree = "<group>";
@@ -80,10 +124,19 @@
 		6FE7F2591C4FE8B5005CC6F0 /* UnitKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				6FE7F25A1C4FE8B5005CC6F0 /* UnitKitTests.swift */,
+				6FE7F25A1C4FE8B5005CC6F0 /* MassUnitTests.swift */,
 				6FE7F25C1C4FE8B5005CC6F0 /* Info.plist */,
 			);
 			path = UnitKitTests;
+			sourceTree = "<group>";
+		};
+		6FE7F2651C4FE8D3005CC6F0 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				6F0D50861C6B3C7F00AACD41 /* Implementations */,
+				6F0D508F1C6B3C7F00AACD41 /* Protocols */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -93,7 +146,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FE7F24F1C4FE8B5005CC6F0 /* UnitKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +246,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F0D50941C6B3C7F00AACD41 /* LengthUnit.swift in Sources */,
+				6F0D509B1C6B3C7F00AACD41 /* UnitType.swift in Sources */,
+				6F0D50991C6B3C7F00AACD41 /* VolumeUnitType.swift in Sources */,
+				6F0D50971C6B3C7F00AACD41 /* MassUnitType.swift in Sources */,
+				6F0D509A1C6B3C7F00AACD41 /* Unit.swift in Sources */,
+				6F0D50931C6B3C7F00AACD41 /* AreaUnitType.swift in Sources */,
+				6F0D50961C6B3C7F00AACD41 /* MassUnit.swift in Sources */,
+				6F0D50981C6B3C7F00AACD41 /* VolumeUnit.swift in Sources */,
+				6F0D50921C6B3C7F00AACD41 /* AreaUnit.swift in Sources */,
+				6F0D50951C6B3C7F00AACD41 /* LengthUnitType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FE7F25B1C4FE8B5005CC6F0 /* UnitKitTests.swift in Sources */,
+				6FE7F25B1C4FE8B5005CC6F0 /* MassUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +370,7 @@
 		6FE7F2601C4FE8B5005CC6F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -318,12 +381,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = dk.deadlock.UnitKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		6FE7F2611C4FE8B5005CC6F0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -376,6 +441,7 @@
 				6FE7F2611C4FE8B5005CC6F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6FE7F2621C4FE8B5005CC6F0 /* Build configuration list for PBXNativeTarget "UnitKitTests" */ = {
 			isa = XCConfigurationList;
@@ -384,6 +450,7 @@
 				6FE7F2641C4FE8B5005CC6F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

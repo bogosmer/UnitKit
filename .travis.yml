@@ -11,5 +11,7 @@ before_install:
 # - pod install --project-directory=Example
 
 script:
-- set -o pipefail && xctool test -project UnitKit.xcodeproj -scheme UnitKit -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
+xctool -project UnitKit.xcodeproj -scheme UnitKit -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+xctool test -project UnitKit.xcodeproj -scheme UnitKit -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+# - set -o pipefail && xctool test -project UnitKit.xcodeproj -scheme UnitKit -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
 # - pod lib lint

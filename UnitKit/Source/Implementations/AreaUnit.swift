@@ -8,12 +8,7 @@
 
 import Foundation
 
-public struct AreaUnit: Unit {
-    public typealias T = AreaUnitType
-    
-    // MARK: - Private properties
-    
-    public var baseUnitTypeValue: NSDecimal = NSDecimalNumber(double: 0).decimalValue
+public struct AreaUnit: _Unit {
     
     // MARK: - Public properties
     
@@ -21,8 +16,9 @@ public struct AreaUnit: Unit {
     public var decimalNumberHandler: NSDecimalNumberHandler?
     
     public let unitType: AreaUnitType
+    public private(set) var baseUnitTypeValue: NSDecimal = NSDecimalNumber.integer(0).decimalValue
     
-    public var sqaureMillimeterValue: NSDecimalNumber {
+    public var squareMillimetreValue: NSDecimalNumber {
         return convertFromBaseUnitTypeTo(AreaUnitType.SquareMillimetre)
     }
     
@@ -74,7 +70,11 @@ public struct AreaUnit: Unit {
     }
     
     public init(value: Double, type: AreaUnitType) {
-        self.init(value: NSDecimalNumber(double: value), type: type)
+        self.init(value: NSDecimalNumber.double(value), type: type)
+    }
+    
+    public init(value: Int, type: AreaUnitType) {
+        self.init(value: NSDecimalNumber.integer(value), type: type)
     }
     
     // MARK: - Public functions
@@ -82,7 +82,7 @@ public struct AreaUnit: Unit {
     public func valueForUnitType(type: AreaUnitType) -> NSDecimalNumber {
         switch type {
         case .SquareMillimetre:
-            return sqaureMillimeterValue
+            return squareMillimetreValue
         case .SquareCentimetre:
             return squareCentimetreValue
         case .SquareMetre:
@@ -105,13 +105,61 @@ public struct AreaUnit: Unit {
             return squareNauticalMileValue
         }
     }
-    
-    // MARK: - Private functions
 }
 
 // MARK: - Double extenstion
 
-extension Double {
+public extension Double {
+    
+    public func squareMillimetres() -> AreaUnit {
+        return AreaUnit(value: self, type: AreaUnitType.SquareMillimetre)
+    }
+    
+    public func squareCentimetres() -> AreaUnit {
+        return AreaUnit(value: self, type: AreaUnitType.SquareCentimetre)
+    }
+    
+    public func squareMetres() -> AreaUnit {
+        return AreaUnit(value: self, type: AreaUnitType.SquareMetre)
+    }
+    
+    public func hectares() -> AreaUnit {
+        return AreaUnit(value: self, type: AreaUnitType.Hectare)
+    }
+    
+    public func squareKilometres() -> AreaUnit {
+        return AreaUnit(value: self, type: AreaUnitType.SquareKilometre)
+    }
+    
+    public func squareInches() -> AreaUnit {
+        return AreaUnit(value: self, type: AreaUnitType.SquareInch)
+    }
+    
+    public func squareFeet() -> AreaUnit {
+        return AreaUnit(value: self, type: AreaUnitType.SquareFoot)
+    }
+    
+    public func squareYards() -> AreaUnit {
+        return AreaUnit(value: self, type: AreaUnitType.SquareYard)
+    }
+    
+    public func acres() -> AreaUnit {
+        return AreaUnit(value: self, type: AreaUnitType.Acre)
+    }
+    
+    public func squareMiles() -> AreaUnit {
+        return AreaUnit(value: self, type: AreaUnitType.SquareMile)
+    }
+    
+    public func squareNauticalMiles() -> AreaUnit {
+        return AreaUnit(value: self, type: AreaUnitType.SquareNauticalMile)
+    }
+    
+}
+
+// MARK: - Int extenstion
+
+public extension Int {
     
     public func squareMillimetres() -> AreaUnit {
         return AreaUnit(value: self, type: AreaUnitType.SquareMillimetre)

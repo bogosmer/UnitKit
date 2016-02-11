@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct MassUnit: Unit {
+public struct MassUnit: _Unit {
 
     // MARK: - Public properties
     
@@ -16,7 +16,7 @@ public struct MassUnit: Unit {
     public var decimalNumberHandler: NSDecimalNumberHandler?
     
     public let unitType: MassUnitType
-    public var baseUnitTypeValue: NSDecimal = NSDecimalNumber(double: 0).decimalValue
+    public private(set) var baseUnitTypeValue: NSDecimal = NSDecimalNumber.double(0).decimalValue
     
     public var milligramValue: NSDecimalNumber {
         return convertFromBaseUnitTypeTo(MassUnitType.Milligram)
@@ -35,7 +35,7 @@ public struct MassUnit: Unit {
     }
     
     public var grainValue: NSDecimalNumber {
-        return convertFromBaseUnitTypeTo(MassUnitType.Gram)
+        return convertFromBaseUnitTypeTo(MassUnitType.Grain)
     }
     
     public var dramValue: NSDecimalNumber {
@@ -88,7 +88,11 @@ public struct MassUnit: Unit {
     }
     
     public init(value: Double, type: MassUnitType) {
-        self.init(value: NSDecimalNumber(double: value), type: type)
+        self.init(value: NSDecimalNumber.double(value), type: type)
+    }
+    
+    public init(value: Int, type: MassUnitType) {
+        self.init(value: NSDecimalNumber.integer(value), type: type)
     }
     
     // MARK: - Public functions
@@ -130,7 +134,69 @@ public struct MassUnit: Unit {
 
 // MARK: - Double extenstion
 
-extension Double {
+public extension Double {
+    
+    public func milligram() -> MassUnit {
+        return MassUnit(value: self, type: MassUnitType.Milligram)
+    }
+    
+    public func gram() -> MassUnit {
+        return MassUnit(value: self, type: MassUnitType.Gram)
+    }
+    
+    public func kilo() -> MassUnit {
+        return MassUnit(value: self, type: MassUnitType.Kilo)
+    }
+    
+    public func tonne() -> MassUnit {
+        return MassUnit(value: self, type: MassUnitType.Tonne)
+    }
+    
+    public func grain() -> MassUnit {
+        return MassUnit(value: self, type: MassUnitType.Grain)
+    }
+    
+    public func dram() -> MassUnit {
+        return MassUnit(value: self, type: MassUnitType.Dram)
+    }
+    
+    public func stone() -> MassUnit {
+        return MassUnit(value: self, type: MassUnitType.Stone)
+    }
+    
+    public func quarter() -> MassUnit {
+        return MassUnit(value: self, type: MassUnitType.Quarter)
+    }
+    
+    public func ounce() -> MassUnit {
+        return MassUnit(value: self, type: MassUnitType.Ounce)
+    }
+    
+    public func pound() -> MassUnit {
+        return MassUnit(value: self, type: MassUnitType.Pound)
+    }
+    
+    public func longHundredweight() -> MassUnit {
+        return MassUnit(value: self, type: MassUnitType.LongHundredweight)
+    }
+    
+    public func longTon() -> MassUnit {
+        return MassUnit(value: self, type: MassUnitType.LongTon)
+    }
+    
+    public func shortHundredweight() -> MassUnit {
+        return MassUnit(value: self, type: MassUnitType.ShortHundredweight)
+    }
+    
+    public func shortTon() -> MassUnit {
+        return MassUnit(value: self, type: MassUnitType.ShortTon)
+    }
+    
+}
+
+// MARK: - Iny extenstion
+
+public extension Int {
     
     public func milligram() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.Milligram)

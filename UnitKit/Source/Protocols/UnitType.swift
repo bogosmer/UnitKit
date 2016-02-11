@@ -14,7 +14,3 @@ public protocol UnitType {
     func localizedAbbreviation(locale: NSLocale?) -> String
     func baseUnitTypePerUnit() -> NSDecimalNumber
 }
-
-public extension UnitType {
-    
-}

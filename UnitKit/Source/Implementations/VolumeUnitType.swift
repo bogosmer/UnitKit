@@ -100,45 +100,45 @@ public enum VolumeUnitType: UnitType {
         let result: NSDecimalNumber
         switch self {
         case .Millilitre:
-            result = NSDecimalNumber(integer: 1)
+            result = NSDecimalNumber.integer(1)
         case .Litre:
-            result = NSDecimalNumber(integer: 1000)
+            result = NSDecimalNumber.integer(1000)
         case .CubicMetre:
-            result = NSDecimalNumber(integer: 1000000)
+            result = NSDecimalNumber.integer(1000000)
         case .CubicInch:
-            result = NSDecimalNumber(double: 16.387064)
+            result = NSDecimalNumber.double(16.387064)
         case .CubicFoot:
-            result = NSDecimalNumber(double: 28316.846592)
+            result = NSDecimalNumber.double(28316.846592)
         case .FluidOunce:
-            result = NSDecimalNumber(double: 28.4130625)
+            result = NSDecimalNumber.double(28.4130625)
         case .Gill:
-            result = NSDecimalNumber(double: 142.0653125)
+            result = NSDecimalNumber.double(142.0653125)
         case .Pint:
-            result = NSDecimalNumber(double: 568.26125)
+            result = NSDecimalNumber.double(568.26125)
         case .Quart:
-            result = NSDecimalNumber(double: 1136.5225)
+            result = NSDecimalNumber.double(1136.5225)
         case .Gallon:
-            result = NSDecimalNumber(double: 4546.09)
+            result = NSDecimalNumber.double(4546.09)
         case .Bushel:
-            result = NSDecimalNumber(double: 36368.72)
+            result = NSDecimalNumber.double(36368.72)
         case .USFluidOunce:
-            result = NSDecimalNumber(double: 29.5735295625)
+            result = NSDecimalNumber.double(29.5735295625)
         case .USLiquidGill:
-            result = NSDecimalNumber(double: 118.29411825)
+            result = NSDecimalNumber.double(118.29411825)
         case .USLiquidPint:
-            result = NSDecimalNumber(double: 473.176473)
+            result = NSDecimalNumber.double(473.176473)
         case .USDryPint:
-            result = NSDecimalNumber(double: 550.6104713575)
+            result = NSDecimalNumber.double(550.6104713575)
         case .USLiquidQuart:
-            result = NSDecimalNumber(double: 946.352946)
+            result = NSDecimalNumber.double(946.352946)
         case .USDryQuart:
-            result = NSDecimalNumber(double: 1101.220942715)
+            result = NSDecimalNumber.double(1101.220942715)
         case .USLiquidGallon:
-            result = NSDecimalNumber(double: 3785.411784)
+            result = NSDecimalNumber.double(3785.411784)
         case .USDryGallon:
-            result = NSDecimalNumber(double: 4404.88377086)
+            result = NSDecimalNumber.double(4404.88377086)
         case .USBushel:
-            result = NSDecimalNumber(double: 131.2266797761942)
+            result = NSDecimalNumber.double(131.2266797761942)
         }
         return result
     }

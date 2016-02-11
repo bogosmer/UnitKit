@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct VolumeUnit: Unit {
+public struct VolumeUnit: _Unit {
     
     // MARK: - Public properties
     
@@ -16,7 +16,7 @@ public struct VolumeUnit: Unit {
     public var decimalNumberHandler: NSDecimalNumberHandler?
     
     public let unitType: VolumeUnitType
-    public var baseUnitTypeValue: NSDecimal = NSDecimalNumber(double: 0).decimalValue
+    public private(set) var baseUnitTypeValue: NSDecimal = NSDecimalNumber.double(0).decimalValue
     
     public var millilitreValue: NSDecimalNumber {
         return convertFromBaseUnitTypeTo(VolumeUnitType.Millilitre)
@@ -106,7 +106,11 @@ public struct VolumeUnit: Unit {
     }
     
     public init(value: Double, type: VolumeUnitType) {
-        self.init(value: NSDecimalNumber(double: value), type: type)
+        self.init(value: NSDecimalNumber.double(value), type: type)
+    }
+    
+    public init(value: Int, type: VolumeUnitType) {
+        self.init(value: NSDecimalNumber.integer(value), type: type)
     }
     
     // MARK: - Public functions
@@ -160,7 +164,7 @@ public struct VolumeUnit: Unit {
 
 // MARK: - Double extenstion
 
-extension Double {
+public extension Double {
     
     public func millilitre() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.Millilitre)
@@ -242,4 +246,90 @@ extension Double {
         return VolumeUnit(value: self, type: VolumeUnitType.USBushel)
     }
 
+}
+
+// MARK: - Int extenstion
+
+public extension Int {
+    
+    public func millilitre() -> VolumeUnit {
+        return VolumeUnit(value: self, type: VolumeUnitType.Millilitre)
+    }
+    
+    public func litre() -> VolumeUnit {
+        return VolumeUnit(value: self, type: VolumeUnitType.Litre)
+    }
+    
+    public func cubicMetre() -> VolumeUnit {
+        return VolumeUnit(value: self, type: VolumeUnitType.CubicMetre)
+    }
+    
+    public func cubicInch() -> VolumeUnit {
+        return VolumeUnit(value: self, type: VolumeUnitType.CubicInch)
+    }
+    
+    public func cubicFoot() -> VolumeUnit {
+        return VolumeUnit(value: self, type: VolumeUnitType.CubicFoot)
+    }
+    
+    public func fluidOunce() -> VolumeUnit {
+        return VolumeUnit(value: self, type: VolumeUnitType.FluidOunce)
+    }
+    
+    public func gill() -> VolumeUnit {
+        return VolumeUnit(value: self, type: VolumeUnitType.Gill)
+    }
+    
+    public func pint() -> VolumeUnit {
+        return VolumeUnit(value: self, type: VolumeUnitType.Pint)
+    }
+    
+    public func quart() -> VolumeUnit {
+        return VolumeUnit(value: self, type: VolumeUnitType.Quart)
+    }
+    
+    public func gallon() -> VolumeUnit {
+        return VolumeUnit(value: self, type: VolumeUnitType.Gallon)
+    }
+    
+    public func bushel() -> VolumeUnit {
+        return VolumeUnit(value: self, type: VolumeUnitType.Bushel)
+    }
+    
+    public func usFluidOunce() -> VolumeUnit {
+        return VolumeUnit(value: self, type: VolumeUnitType.USFluidOunce)
+    }
+    
+    public func usLiquidGill() -> VolumeUnit {
+        return VolumeUnit(value: self, type: VolumeUnitType.USLiquidGill)
+    }
+    
+    public func usLiquidPint() -> VolumeUnit {
+        return VolumeUnit(value: self, type: VolumeUnitType.USLiquidPint)
+    }
+    
+    public func usDryPint() -> VolumeUnit {
+        return VolumeUnit(value: self, type: VolumeUnitType.USDryPint)
+    }
+    
+    public func usLiquidQuart() -> VolumeUnit {
+        return VolumeUnit(value: self, type: VolumeUnitType.USLiquidQuart)
+    }
+    
+    public func usDryQuart() -> VolumeUnit {
+        return VolumeUnit(value: self, type: VolumeUnitType.USDryQuart)
+    }
+    
+    public func usLiquidGallon() -> VolumeUnit {
+        return VolumeUnit(value: self, type: VolumeUnitType.USLiquidGallon)
+    }
+    
+    public func usDryGallon() -> VolumeUnit {
+        return VolumeUnit(value: self, type: VolumeUnitType.USDryGallon)
+    }
+    
+    public func usBushel() -> VolumeUnit {
+        return VolumeUnit(value: self, type: VolumeUnitType.USBushel)
+    }
+    
 }

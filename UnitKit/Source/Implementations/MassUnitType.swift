@@ -85,33 +85,33 @@ public enum MassUnitType: UnitType {
         let result: NSDecimalNumber
         switch self {
         case .Milligram:
-            result = NSDecimalNumber(double: 0.001)
+            result = NSDecimalNumber.double(0.001)
         case .Gram:
-            result = NSDecimalNumber(integer: 1)
+            result = NSDecimalNumber.integer(1)
         case .Kilo:
-            result = NSDecimalNumber(integer: 1000)
+            result = NSDecimalNumber.integer(1000)
         case .Tonne:
-            result = NSDecimalNumber(integer: 1000000)
+            result = NSDecimalNumber.integer(1000000)
         case .Grain:
-            result = NSDecimalNumber(double: 0.06479891)
+            result = NSDecimalNumber.double(0.06479891)
         case .Dram:
-            result = NSDecimalNumber(double: 1.7718451953125)
+            result = NSDecimalNumber.double(1.7718451953125)
         case .Ounce:
-            result = NSDecimalNumber(double: 28.349523125)
+            result = NSDecimalNumber.double(28.349523125)
         case .Pound:
-            result = NSDecimalNumber(double: 453.59237)
+            result = NSDecimalNumber.double(453.59237)
         case .Stone:
-            result = NSDecimalNumber(double: 6350.29318)
+            result = NSDecimalNumber.double(6350.29318)
         case .Quarter:
-            result = NSDecimalNumber(double: 12700.58636)
+            result = NSDecimalNumber.double(12700.58636)
         case .LongHundredweight:
-            result = NSDecimalNumber(double: 45359.237)
+            result = NSDecimalNumber.double(45359.237)
         case .LongTon:
-            result = NSDecimalNumber(integer: 1016000)
+            result = NSDecimalNumber.integer(1016000)
         case .ShortHundredweight:
-            result = NSDecimalNumber(double: 50802.345)
+            result = NSDecimalNumber.double(50802.345)
         case .ShortTon:
-            result = NSDecimalNumber(integer: 907000)
+            result = NSDecimalNumber.integer(907000)
         }
         return result
     }

@@ -67,23 +67,23 @@ public enum LengthUnitType: UnitType {
         let result: NSDecimalNumber
         switch self {
         case .Millimetre:
-            result = NSDecimalNumber(double: 0.1)
+            result = NSDecimalNumber.double(0.1)
         case .Centimetre:
-            result = NSDecimalNumber(integer: 1)
+            result = NSDecimalNumber.integer(1)
         case .Metre:
-            result = NSDecimalNumber(integer: 100)
+            result = NSDecimalNumber.integer(100)
         case .Kilometre:
-            result = NSDecimalNumber(integer: 100000)
+            result = NSDecimalNumber.integer(100000)
         case .Inch:
-            result = NSDecimalNumber(double: 2.54)
+            result = NSDecimalNumber.double(2.54)
         case .Foot:
-            result = NSDecimalNumber(double: 30.48)
+            result = NSDecimalNumber.double(30.48)
         case .Yard:
-            result = NSDecimalNumber(double: 91.44)
+            result = NSDecimalNumber.double(91.44)
         case .Mile:
-            result = NSDecimalNumber(double: 160934.4)
+            result = NSDecimalNumber.double(160934.4)
         case .NauticalMile:
-            result = NSDecimalNumber(double: 185200)
+            result = NSDecimalNumber.double(185200)
         }
         return result
     }

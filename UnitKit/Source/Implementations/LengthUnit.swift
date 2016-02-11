@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct LengthUnit: Unit {
+public struct LengthUnit: _Unit {
     
     // MARK: - Public properties
     
@@ -16,9 +16,9 @@ public struct LengthUnit: Unit {
     public var decimalNumberHandler: NSDecimalNumberHandler?
     
     public let unitType: LengthUnitType
-    public var baseUnitTypeValue: NSDecimal = NSDecimalNumber(double: 0).decimalValue
+    public private(set) var baseUnitTypeValue: NSDecimal = NSDecimalNumber.double(0).decimalValue
     
-    public var millimeterValue: NSDecimalNumber {
+    public var millimetreValue: NSDecimalNumber {
         return convertFromBaseUnitTypeTo(LengthUnitType.Millimetre)
     }
     
@@ -62,7 +62,11 @@ public struct LengthUnit: Unit {
     }
     
     public init(value: Double, type: LengthUnitType) {
-        self.init(value: NSDecimalNumber(double: value), type: type)
+        self.init(value: NSDecimalNumber.double(value), type: type)
+    }
+    
+    public init(value: Int, type: LengthUnitType) {
+        self.init(value: NSDecimalNumber.integer(value), type: type)
     }
     
     // MARK: - Public functions
@@ -70,7 +74,7 @@ public struct LengthUnit: Unit {
     public func valueForUnitType(type: LengthUnitType) -> NSDecimalNumber {
         switch type {
         case .Millimetre:
-            return millimeterValue
+            return millimetreValue
         case .Centimetre:
             return centimetreValue
         case .Metre:
@@ -94,7 +98,49 @@ public struct LengthUnit: Unit {
 
 // MARK: - Double extenstion
 
-extension Double {
+public extension Double {
+    
+    public func millimetres() -> LengthUnit {
+        return LengthUnit(value: self, type: LengthUnitType.Millimetre)
+    }
+    
+    public func centimetres() -> LengthUnit {
+        return LengthUnit(value: self, type: LengthUnitType.Centimetre)
+    }
+    
+    public func metres() -> LengthUnit {
+        return LengthUnit(value: self, type: LengthUnitType.Metre)
+    }
+    
+    public func kilometres() -> LengthUnit {
+        return LengthUnit(value: self, type: LengthUnitType.Kilometre)
+    }
+    
+    public func inches() -> LengthUnit {
+        return LengthUnit(value: self, type: LengthUnitType.Inch)
+    }
+    
+    public func feet() -> LengthUnit {
+        return LengthUnit(value: self, type: LengthUnitType.Foot)
+    }
+    
+    public func yards() -> LengthUnit {
+        return LengthUnit(value: self, type: LengthUnitType.Yard)
+    }
+    
+    public func miles() -> LengthUnit {
+        return LengthUnit(value: self, type: LengthUnitType.Mile)
+    }
+    
+    public func nauticalMiles() -> LengthUnit {
+        return LengthUnit(value: self, type: LengthUnitType.NauticalMile)
+    }
+    
+}
+
+// MARK: - Int extenstion
+
+public extension Int {
     
     public func millimetres() -> LengthUnit {
         return LengthUnit(value: self, type: LengthUnitType.Millimetre)

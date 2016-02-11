@@ -19,11 +19,9 @@ public protocol Unit: CustomStringConvertible {
     
     init(value: NSDecimalNumber, type: T)
     init(value: Double, type: T)
+    init(value: Int, type: T)
     
     func valueForUnitType(unitType: T) -> NSDecimalNumber
-    
-    func convertToBaseUnitType(value: NSDecimalNumber, fromType: T) -> NSDecimalNumber
-    func convertFromBaseUnitTypeTo(unitType: T) -> NSDecimalNumber
 }
 
 public extension Unit {
@@ -33,43 +31,33 @@ public extension Unit {
     }
 }
 
-public extension Unit {
+internal protocol _Unit: Unit {
 
-    public func convertToBaseUnitType(value: NSDecimalNumber, fromType: T) -> NSDecimalNumber {
-        return value.decimalNumberByDividingBy(fromType.baseUnitTypePerUnit(), withBehavior: decimalNumberHandler ?? self.dynamicType.sharedDecimalNumberHandler )
+    func convertToBaseUnitType(value: NSDecimalNumber, fromType: T) -> NSDecimalNumber
+    func convertFromBaseUnitTypeTo(unitType: T) -> NSDecimalNumber
+}
+
+internal extension _Unit {
+
+    internal func convertToBaseUnitType(value: NSDecimalNumber, fromType: T) -> NSDecimalNumber {
+        let handler = decimalNumberHandler ?? self.dynamicType.sharedDecimalNumberHandler
+        let result: NSDecimalNumber
+        if handler != nil {
+            result = value.decimalNumberByMultiplyingBy(fromType.baseUnitTypePerUnit(), withBehavior: handler)
+        } else {
+            result = value.decimalNumberByMultiplyingBy(fromType.baseUnitTypePerUnit())
+        }
+        return result
     }
     
-    public func convertFromBaseUnitTypeTo(unitType: T) -> NSDecimalNumber {
-        return NSDecimalNumber(decimal: baseUnitTypeValue).decimalNumberByMultiplyingBy(unitType.baseUnitTypePerUnit(), withBehavior: decimalNumberHandler ?? self.dynamicType.sharedDecimalNumberHandler )
+    internal func convertFromBaseUnitTypeTo(unitType: T) -> NSDecimalNumber {
+        let handler = decimalNumberHandler ?? self.dynamicType.sharedDecimalNumberHandler
+        let result: NSDecimalNumber
+        if handler != nil {
+            result = NSDecimalNumber(decimal: baseUnitTypeValue).decimalNumberByDividingBy(unitType.baseUnitTypePerUnit(), withBehavior: handler)
+        } else {
+            result = NSDecimalNumber(decimal: baseUnitTypeValue).decimalNumberByDividingBy(unitType.baseUnitTypePerUnit())
+        }
+        return result
     }
-}
-
-// MARK: - Arithmethic functions
-
-// Left operand decides unit type and takes precedence when finding the NSDecimalNumberHandler to use
-public func + <U: Unit>(left: U, right: U) -> U {
-    let decimalNumberHandler = left.decimalNumberHandler ?? right.decimalNumberHandler ?? U.sharedDecimalNumberHandler
-    return U(value: left.valueForUnitType(left.unitType).decimalNumberByAdding(right.valueForUnitType(left.unitType), withBehavior: decimalNumberHandler), type: left.unitType)
-}
-
-public func + <U: Unit>(left: U, right: Double) -> U {
-    return left + U(value: right, type: left.unitType)
-}
-
-public func + <U: Unit>(left: Double, right: U) -> U {
-    return right + left
-}
-
-// Left operand decides unit type and takes precedence when finding the NSDecimalNumberHandler to use
-public func - <U: Unit>(left: U, right: U) -> U {
-    let decimalNumberHandler = left.decimalNumberHandler ?? right.decimalNumberHandler ?? U.sharedDecimalNumberHandler
-    return U(value: left.valueForUnitType(left.unitType).decimalNumberBySubtracting(right.valueForUnitType(left.unitType), withBehavior: decimalNumberHandler), type: left.unitType)
-}
-
-public func - <U: Unit>(left: U, right: Double) -> U {
-    return left - U(value: right, type: left.unitType)
-}
-
-public func - <U: Unit>(left: Double, right: U) -> U {
-    return right - left
 }

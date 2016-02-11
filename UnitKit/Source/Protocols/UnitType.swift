@@ -8,9 +8,7 @@
 
 import Foundation
 
-public protocol UnitType {
+public protocol UnitType: CustomStringConvertible {
     
-    func localizedName(locale: NSLocale?) -> String
-    func localizedAbbreviation(locale: NSLocale?) -> String
     func baseUnitTypePerUnit() -> NSDecimalNumber
 }

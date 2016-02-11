@@ -147,7 +147,33 @@ class LengthUnitTests: XCTestCase {
     
     func testDescription() {
         let unit = LengthUnit(value: 1, type: .Centimetre)
-        XCTAssert(unit.description == "1 cm", "got \(unit.description)")
+        XCTAssert(unit.description == "1 centimetre", "expected 1 centimetre - got \(unit.description)")
+    }
+    
+    // MARK: - Localization
+    
+    func testLocalizedName() {
+        let unitSingle = LengthUnit(value: 1, type: .Centimetre)
+        XCTAssert(unitSingle.localizedNameOfUnitType(nil) == "centimetre")
+        XCTAssert(unitSingle.localizedNameOfUnitType(NSLocale(localeIdentifier: "en")) == "centimetre")
+        XCTAssert(unitSingle.localizedNameOfUnitType(NSLocale(localeIdentifier: "da")) == "centimeter")
+        
+        let unitPlural = LengthUnit(value: 2, type: .Centimetre)
+        XCTAssert(unitPlural.localizedNameOfUnitType(nil) == "centimetres")
+        XCTAssert(unitPlural.localizedNameOfUnitType(NSLocale(localeIdentifier: "en")) == "centimetres")
+        XCTAssert(unitPlural.localizedNameOfUnitType(NSLocale(localeIdentifier: "da")) == "centimeter")
+    }
+    
+    func testLocalizedAbbreviation() {
+        let unitSingle = LengthUnit(value: 1, type: .Centimetre)
+        XCTAssert(unitSingle.localizedAbbreviationOfUnitType(nil) == "cm")
+        XCTAssert(unitSingle.localizedAbbreviationOfUnitType(NSLocale(localeIdentifier: "en")) == "cm")
+        XCTAssert(unitSingle.localizedAbbreviationOfUnitType(NSLocale(localeIdentifier: "da")) == "cm")
+        
+        let unitPlural = LengthUnit(value: 2, type: .Centimetre)
+        XCTAssert(unitPlural.localizedAbbreviationOfUnitType(nil) == "cm")
+        XCTAssert(unitPlural.localizedAbbreviationOfUnitType(NSLocale(localeIdentifier: "en")) == "cm")
+        XCTAssert(unitPlural.localizedAbbreviationOfUnitType(NSLocale(localeIdentifier: "da")) == "cm")
     }
     
     // MARK: - Arithmetic

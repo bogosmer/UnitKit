@@ -8,17 +8,17 @@
 
 import Foundation
 
-public enum MassUnitType: UnitType {
+public enum MassUnitType: String, UnitType {
     
-    // MARK: - Metric
+    // MARK: - Enum
     
+    // MARK: Metric
     case Milligram
     case Gram
     case Kilo
     case Tonne
     
-    // MARK: - Imperial
-    
+    // MARK: Imperial
     case Grain
     case Dram
     case Ounce
@@ -28,52 +28,57 @@ public enum MassUnitType: UnitType {
     case LongHundredweight
     case LongTon
     
-    // MARK: - US
-    
+    // MARK: US
     case ShortHundredweight
     case ShortTon
     
-    // MARK: - Public functions
-    // TODO - use localization
-    public func localizedName(locale: NSLocale? = NSLocale.currentLocale()) -> String {
-        return localizedAbbreviation()
+    // MARK: - Public properties
+    
+    public var description:String {
+        return self.rawValue
     }
     
-    // TODO - use localization
-    public func localizedAbbreviation(locale: NSLocale? = NSLocale.currentLocale()) -> String {
-        let result: String
-        switch self {
-        case .Milligram:
-            result = "mg"
-        case .Gram:
-            result = "g"
-        case .Kilo:
-            result = "kg"
-        case .Tonne:
-            result = "t"
-        case .Grain:
-            result = "gr"
-        case .Dram:
-            result = "dr"
-        case .Ounce:
-            result = "oz"
-        case .Pound:
-            result = "lb"
-        case .Stone:
-            result = "st"
-        case .Quarter:
-            result = "qtr"
-        case .LongHundredweight:
-            result = "cwt"
-        case .LongTon:
-            result = "t"
-        case .ShortHundredweight:
-            result = "cwt"
-        case .ShortTon:
-            result = "t"
-        }
-        return result
-    }
+    // MARK: - Public functions
+//    // TODO - use localization
+//    public func localizedName(locale: NSLocale?) -> String {
+//        return localizedAbbreviation(locale)
+//    }
+//    
+//    // TODO - use localization
+//    public func localizedAbbreviation(locale: NSLocale?) -> String {
+//        let result: String
+//        switch self {
+//        case .Milligram:
+//            result = "mg"
+//        case .Gram:
+//            result = "g"
+//        case .Kilo:
+//            result = "kg"
+//        case .Tonne:
+//            result = "t"
+//        case .Grain:
+//            result = "gr"
+//        case .Dram:
+//            result = "dr"
+//        case .Ounce:
+//            result = "oz"
+//        case .Pound:
+//            result = "lb"
+//        case .Stone:
+//            result = "st"
+//        case .Quarter:
+//            result = "qtr"
+//        case .LongHundredweight:
+//            result = "cwt"
+//        case .LongTon:
+//            result = "t"
+//        case .ShortHundredweight:
+//            result = "cwt"
+//        case .ShortTon:
+//            result = "t"
+//        }
+//        return result
+//    }
     
     public func baseUnitTypePerUnit() -> NSDecimalNumber {
         return gramsPerUnit()

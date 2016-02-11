@@ -8,54 +8,32 @@
 
 import Foundation
 
-public enum LengthUnitType: UnitType {
+public enum LengthUnitType: String, UnitType {
     
-    // MARK: - Metric
+    // MARK: - Enum
+    
+    // MARK: Metric
     case Millimetre
     case Centimetre
     case Metre
     case Kilometre
     
-    // MARK: - Imperial
+    // MARK: Imperial
     case Inch
     case Foot
     case Yard
     case Mile
     
-    // MARK: - Marine
+    // MARK: Marine
     case NauticalMile
     
-    // MARK: - Public functions
-    // TODO - use localization
-    public func localizedName(locale: NSLocale? = NSLocale.currentLocale()) -> String {
-        return localizedAbbreviation()
+    // MARK: - Public properties
+    
+    public var description:String {
+        return self.rawValue
     }
     
-    // TODO - use localization
-    public func localizedAbbreviation(locale: NSLocale? = NSLocale.currentLocale()) -> String {
-        let result: String
-        switch self {
-        case .Millimetre:
-            result = "mm"
-        case .Centimetre:
-            result = "cm"
-        case .Metre:
-            result = "m"
-        case .Kilometre:
-            result = "km"
-        case .Inch:
-            result = "in"
-        case .Foot:
-            result = "ft"
-        case .Yard:
-            result = "yd"
-        case .Mile:
-            result = "mi"
-        case .NauticalMile:
-            result = "nmi"
-        }
-        return result
-    }
+    // MARK: - Public functions
     
     public func baseUnitTypePerUnit() -> NSDecimalNumber {
         return centimetresPerUnit()

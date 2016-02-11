@@ -8,61 +8,34 @@
 
 import Foundation
 
-public enum AreaUnitType: UnitType {
+public enum AreaUnitType: String, UnitType {
     
-    // MARK: - Metric
+    // MARK: - Enum
+    
+    // MARK: Metric
     case SquareMillimetre
     case SquareCentimetre
     case SquareMetre
     case Hectare
     case SquareKilometre
     
-    // MARK: - Imperial
+    // MARK: Imperial
     case SquareInch
     case SquareFoot
     case SquareYard
     case Acre
     case SquareMile
     
-    // MARK: - Marine
+    // MARK: Marine
     case SquareNauticalMile
     
+    // MARK: - Public properties
+    
+    public var description:String {
+        return self.rawValue
+    }
+    
     // MARK: - Public functions
-    
-    // TODO - use localization
-    public func localizedName(locale: NSLocale? = NSLocale.currentLocale()) -> String {
-        return localizedAbbreviation()
-    }
-    
-    // TODO - use localization
-    public func localizedAbbreviation(locale: NSLocale? = NSLocale.currentLocale()) -> String {
-        let result: String
-        switch self {
-        case .SquareMillimetre:
-            result = "mm²"
-        case .SquareCentimetre:
-            result = "cm²"
-        case .SquareMetre:
-            result = "m²"
-        case .Hectare:
-            result = "ha"
-        case .SquareKilometre:
-            result = "km²"
-        case .SquareInch:
-            result = "in²"
-        case .SquareFoot:
-            result = "ft²"
-        case .SquareYard:
-            result = "yd²"
-        case .Acre:
-            result = "ac"
-        case .SquareMile:
-            result = "mi²"
-        case .SquareNauticalMile:
-            result = "nmi²"
-        }
-        return result
-    }
     
     public func baseUnitTypePerUnit() -> NSDecimalNumber {
         return squareCentimetresPerUnit()

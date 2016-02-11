@@ -231,7 +231,33 @@ class VolumeUnitTests: XCTestCase {
     
     func testDescription() {
         let unit = VolumeUnit(value: 1, type: .Litre)
-        XCTAssert(unit.description == "1 l", "got \(unit.description)")
+        XCTAssert(unit.description == "1 litre", "expected 1 litre - got \(unit.description)")
+    }
+    
+    // MARK: - Localization
+    
+    func testLocalizedName() {
+        let unitSingle = VolumeUnit(value: 1, type: .Millilitre)
+        XCTAssert(unitSingle.localizedNameOfUnitType(nil) == "millilitre")
+        XCTAssert(unitSingle.localizedNameOfUnitType(NSLocale(localeIdentifier: "en")) == "millilitre")
+        XCTAssert(unitSingle.localizedNameOfUnitType(NSLocale(localeIdentifier: "da")) == "milliliter")
+        
+        let unitPlural = VolumeUnit(value: 2, type: .Millilitre)
+        XCTAssert(unitPlural.localizedNameOfUnitType(nil) == "millilitres")
+        XCTAssert(unitPlural.localizedNameOfUnitType(NSLocale(localeIdentifier: "en")) == "millilitres")
+        XCTAssert(unitPlural.localizedNameOfUnitType(NSLocale(localeIdentifier: "da")) == "milliliter")
+    }
+    
+    func testLocalizedAbbreviation() {
+        let unitSingle = VolumeUnit(value: 1, type: .Millilitre)
+        XCTAssert(unitSingle.localizedAbbreviationOfUnitType(nil) == "ml")
+        XCTAssert(unitSingle.localizedAbbreviationOfUnitType(NSLocale(localeIdentifier: "en")) == "ml")
+        XCTAssert(unitSingle.localizedAbbreviationOfUnitType(NSLocale(localeIdentifier: "da")) == "ml")
+        
+        let unitPlural = VolumeUnit(value: 2, type: .Millilitre)
+        XCTAssert(unitPlural.localizedAbbreviationOfUnitType(nil) == "ml")
+        XCTAssert(unitPlural.localizedAbbreviationOfUnitType(NSLocale(localeIdentifier: "en")) == "ml")
+        XCTAssert(unitPlural.localizedAbbreviationOfUnitType(NSLocale(localeIdentifier: "da")) == "ml")
     }
     
     // MARK: - Arithmetic
@@ -333,103 +359,103 @@ class VolumeUnitTests: XCTestCase {
     // MARK: - Double and Int extensions
     
     func testMillilitreExtension() {
-        XCTAssert(1.0.millilitre().millilitreValue == VolumeUnit(value: 1.0, type: .Millilitre).millilitreValue)
-        XCTAssert(1.millilitre().millilitreValue == VolumeUnit(value: 1, type: .Millilitre).millilitreValue)
+        XCTAssert(1.0.millilitres().millilitreValue == VolumeUnit(value: 1.0, type: .Millilitre).millilitreValue)
+        XCTAssert(1.millilitres().millilitreValue == VolumeUnit(value: 1, type: .Millilitre).millilitreValue)
     }
     
     func testLitreExtension() {
-        XCTAssert(1.0.litre().litreValue == VolumeUnit(value: 1.0, type: .Litre).litreValue)
-        XCTAssert(1.litre().litreValue == VolumeUnit(value: 1, type: .Litre).litreValue)
+        XCTAssert(1.0.litres().litreValue == VolumeUnit(value: 1.0, type: .Litre).litreValue)
+        XCTAssert(1.litres().litreValue == VolumeUnit(value: 1, type: .Litre).litreValue)
     }
     
     func testCubicMetreExtension() {
-        XCTAssert(1.0.cubicMetre().cubicMetreValue == VolumeUnit(value: 1.0, type: .CubicMetre).cubicMetreValue)
-        XCTAssert(1.cubicMetre().cubicMetreValue == VolumeUnit(value: 1, type: .CubicMetre).cubicMetreValue)
+        XCTAssert(1.0.cubicMetres().cubicMetreValue == VolumeUnit(value: 1.0, type: .CubicMetre).cubicMetreValue)
+        XCTAssert(1.cubicMetres().cubicMetreValue == VolumeUnit(value: 1, type: .CubicMetre).cubicMetreValue)
     }
     
     func testCubicInchExtension() {
-        XCTAssert(1.0.cubicInch().cubicInchValue == VolumeUnit(value: 1.0, type: .CubicInch).cubicInchValue)
-        XCTAssert(1.cubicInch().cubicInchValue == VolumeUnit(value: 1, type: .CubicInch).cubicInchValue)
+        XCTAssert(1.0.cubicInches().cubicInchValue == VolumeUnit(value: 1.0, type: .CubicInch).cubicInchValue)
+        XCTAssert(1.cubicInches().cubicInchValue == VolumeUnit(value: 1, type: .CubicInch).cubicInchValue)
     }
     
     func testCubicFootExtension() {
-        XCTAssert(1.0.cubicFoot().cubicFootValue == VolumeUnit(value: 1.0, type: .CubicFoot).cubicFootValue)
-        XCTAssert(1.cubicFoot().cubicFootValue == VolumeUnit(value: 1, type: .CubicFoot).cubicFootValue)
+        XCTAssert(1.0.cubicFeet().cubicFootValue == VolumeUnit(value: 1.0, type: .CubicFoot).cubicFootValue)
+        XCTAssert(1.cubicFeet().cubicFootValue == VolumeUnit(value: 1, type: .CubicFoot).cubicFootValue)
     }
     
     func testFluidOunceExtension() {
-        XCTAssert(1.0.fluidOunce().fluidOunceValue == VolumeUnit(value: 1.0, type: .FluidOunce).fluidOunceValue)
-        XCTAssert(1.fluidOunce().fluidOunceValue == VolumeUnit(value: 1, type: .FluidOunce).fluidOunceValue)
+        XCTAssert(1.0.fluidOunces().fluidOunceValue == VolumeUnit(value: 1.0, type: .FluidOunce).fluidOunceValue)
+        XCTAssert(1.fluidOunces().fluidOunceValue == VolumeUnit(value: 1, type: .FluidOunce).fluidOunceValue)
     }
     
     func testGillExtension() {
-        XCTAssert(1.0.gill().gillValue == VolumeUnit(value: 1.0, type: .Gill).gillValue)
-        XCTAssert(1.gill().gillValue == VolumeUnit(value: 1, type: .Gill).gillValue)
+        XCTAssert(1.0.gills().gillValue == VolumeUnit(value: 1.0, type: .Gill).gillValue)
+        XCTAssert(1.gills().gillValue == VolumeUnit(value: 1, type: .Gill).gillValue)
     }
     
     func testPintExtension() {
-        XCTAssert(1.0.pint().pintValue == VolumeUnit(value: 1.0, type: .Pint).pintValue)
-        XCTAssert(1.pint().pintValue == VolumeUnit(value: 1, type: .Pint).pintValue)
+        XCTAssert(1.0.pints().pintValue == VolumeUnit(value: 1.0, type: .Pint).pintValue)
+        XCTAssert(1.pints().pintValue == VolumeUnit(value: 1, type: .Pint).pintValue)
     }
     
     func testQuartExtension() {
-        XCTAssert(1.0.quart().quartValue == VolumeUnit(value: 1.0, type: .Quart).quartValue)
-        XCTAssert(1.quart().quartValue == VolumeUnit(value: 1, type: .Quart).quartValue)
+        XCTAssert(1.0.quarts().quartValue == VolumeUnit(value: 1.0, type: .Quart).quartValue)
+        XCTAssert(1.quarts().quartValue == VolumeUnit(value: 1, type: .Quart).quartValue)
     }
     
     func testGallonExtension() {
-        XCTAssert(1.0.gallon().gallonValue == VolumeUnit(value: 1.0, type: .Gallon).gallonValue)
-        XCTAssert(1.gallon().gallonValue == VolumeUnit(value: 1, type: .Gallon).gallonValue)
+        XCTAssert(1.0.gallons().gallonValue == VolumeUnit(value: 1.0, type: .Gallon).gallonValue)
+        XCTAssert(1.gallons().gallonValue == VolumeUnit(value: 1, type: .Gallon).gallonValue)
     }
     
     func testBushelExtension() {
-        XCTAssert(1.0.bushel().bushelValue == VolumeUnit(value: 1.0, type: .Bushel).bushelValue)
-        XCTAssert(1.bushel().bushelValue == VolumeUnit(value: 1, type: .Bushel).bushelValue)
+        XCTAssert(1.0.bushels().bushelValue == VolumeUnit(value: 1.0, type: .Bushel).bushelValue)
+        XCTAssert(1.bushels().bushelValue == VolumeUnit(value: 1, type: .Bushel).bushelValue)
     }
     
     func testUSFluidOunceExtension() {
-        XCTAssert(1.0.usFluidOunce().usFluidOunceValue == VolumeUnit(value: 1.0, type: .USFluidOunce).usFluidOunceValue)
-        XCTAssert(1.usFluidOunce().usFluidOunceValue == VolumeUnit(value: 1, type: .USFluidOunce).usFluidOunceValue)
+        XCTAssert(1.0.usFluidOunces().usFluidOunceValue == VolumeUnit(value: 1.0, type: .USFluidOunce).usFluidOunceValue)
+        XCTAssert(1.usFluidOunces().usFluidOunceValue == VolumeUnit(value: 1, type: .USFluidOunce).usFluidOunceValue)
     }
     
     func testUSLiquidGillExtension() {
-        XCTAssert(1.0.usLiquidGill().usLiquidGillValue == VolumeUnit(value: 1.0, type: .USLiquidGill).usLiquidGillValue)
-        XCTAssert(1.usLiquidGill().usLiquidGillValue == VolumeUnit(value: 1, type: .USLiquidGill).usLiquidGillValue)
+        XCTAssert(1.0.usLiquidGills().usLiquidGillValue == VolumeUnit(value: 1.0, type: .USLiquidGill).usLiquidGillValue)
+        XCTAssert(1.usLiquidGills().usLiquidGillValue == VolumeUnit(value: 1, type: .USLiquidGill).usLiquidGillValue)
     }
     
     func testUSLiquidPintExtension() {
-        XCTAssert(1.0.usLiquidPint().usLiquidPintValue == VolumeUnit(value: 1.0, type: .USLiquidPint).usLiquidPintValue)
-        XCTAssert(1.usLiquidPint().usLiquidPintValue == VolumeUnit(value: 1, type: .USLiquidPint).usLiquidPintValue)
+        XCTAssert(1.0.usLiquidPints().usLiquidPintValue == VolumeUnit(value: 1.0, type: .USLiquidPint).usLiquidPintValue)
+        XCTAssert(1.usLiquidPints().usLiquidPintValue == VolumeUnit(value: 1, type: .USLiquidPint).usLiquidPintValue)
     }
     
     func testUSDryPintExtension() {
-        XCTAssert(1.0.usDryPint().usDryPintValue == VolumeUnit(value: 1.0, type: .USDryPint).usDryPintValue)
-        XCTAssert(1.usDryPint().usDryPintValue == VolumeUnit(value: 1, type: .USDryPint).usDryPintValue)
+        XCTAssert(1.0.usDryPints().usDryPintValue == VolumeUnit(value: 1.0, type: .USDryPint).usDryPintValue)
+        XCTAssert(1.usDryPints().usDryPintValue == VolumeUnit(value: 1, type: .USDryPint).usDryPintValue)
     }
     
     func testUSLiquidQuartExtension() {
-        XCTAssert(1.0.usLiquidQuart().usLiquidQuartValue == VolumeUnit(value: 1.0, type: .USLiquidQuart).usLiquidQuartValue)
-        XCTAssert(1.usLiquidQuart().usLiquidQuartValue == VolumeUnit(value: 1, type: .USLiquidQuart).usLiquidQuartValue)
+        XCTAssert(1.0.usLiquidQuarts().usLiquidQuartValue == VolumeUnit(value: 1.0, type: .USLiquidQuart).usLiquidQuartValue)
+        XCTAssert(1.usLiquidQuarts().usLiquidQuartValue == VolumeUnit(value: 1, type: .USLiquidQuart).usLiquidQuartValue)
     }
     
     func testUSDryQuartExtension() {
-        XCTAssert(1.0.usDryQuart().usDryQuartValue == VolumeUnit(value: 1.0, type: .USDryQuart).usDryQuartValue)
-        XCTAssert(1.usDryQuart().usDryQuartValue == VolumeUnit(value: 1, type: .USDryQuart).usDryQuartValue)
+        XCTAssert(1.0.usDryQuarts().usDryQuartValue == VolumeUnit(value: 1.0, type: .USDryQuart).usDryQuartValue)
+        XCTAssert(1.usDryQuarts().usDryQuartValue == VolumeUnit(value: 1, type: .USDryQuart).usDryQuartValue)
     }
     
     func testUSLiquidGallonExtension() {
-        XCTAssert(1.0.usLiquidGallon().usLiquidGallonValue == VolumeUnit(value: 1.0, type: .USLiquidGallon).usLiquidGallonValue)
-        XCTAssert(1.usLiquidGallon().usLiquidGallonValue == VolumeUnit(value: 1, type: .USLiquidGallon).usLiquidGallonValue)
+        XCTAssert(1.0.usLiquidGallons().usLiquidGallonValue == VolumeUnit(value: 1.0, type: .USLiquidGallon).usLiquidGallonValue)
+        XCTAssert(1.usLiquidGallons().usLiquidGallonValue == VolumeUnit(value: 1, type: .USLiquidGallon).usLiquidGallonValue)
     }
     
     func testUSDryGallonExtension() {
-        XCTAssert(1.0.usDryGallon().usDryGallonValue == VolumeUnit(value: 1.0, type: .USDryGallon).usDryGallonValue)
-        XCTAssert(1.usDryGallon().usDryGallonValue == VolumeUnit(value: 1, type: .USDryGallon).usDryGallonValue)
+        XCTAssert(1.0.usDryGallons().usDryGallonValue == VolumeUnit(value: 1.0, type: .USDryGallon).usDryGallonValue)
+        XCTAssert(1.usDryGallons().usDryGallonValue == VolumeUnit(value: 1, type: .USDryGallon).usDryGallonValue)
     }
     
     func testUSBushelExtension() {
-        XCTAssert(1.0.usBushel().usBushelValue == VolumeUnit(value: 1.0, type: .USBushel).usBushelValue)
-        XCTAssert(1.usBushel().usBushelValue == VolumeUnit(value: 1, type: .USBushel).usBushelValue)
+        XCTAssert(1.0.usBushels().usBushelValue == VolumeUnit(value: 1.0, type: .USBushel).usBushelValue)
+        XCTAssert(1.usBushels().usBushelValue == VolumeUnit(value: 1, type: .USBushel).usBushelValue)
     }
 }
 

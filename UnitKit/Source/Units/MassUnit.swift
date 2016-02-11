@@ -74,12 +74,6 @@ public struct MassUnit: _Unit {
         return convertFromBaseUnitTypeTo(MassUnitType.ShortTon)
     }
     
-    // MARK: - CustomStringConvertible
-    
-    public var description: String {
-        return "\(valueForUnitType(unitType)) \(unitType.localizedName())"
-    }
-    
     // MARK: - Lifecycle
     
     public init(value: NSDecimalNumber, type: MassUnitType) {
@@ -136,59 +130,59 @@ public struct MassUnit: _Unit {
 
 public extension Double {
     
-    public func milligram() -> MassUnit {
+    public func milligrams() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.Milligram)
     }
     
-    public func gram() -> MassUnit {
+    public func grams() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.Gram)
     }
     
-    public func kilo() -> MassUnit {
+    public func kilos() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.Kilo)
     }
     
-    public func tonne() -> MassUnit {
+    public func tonnes() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.Tonne)
     }
     
-    public func grain() -> MassUnit {
+    public func grains() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.Grain)
     }
     
-    public func dram() -> MassUnit {
+    public func drams() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.Dram)
     }
     
-    public func stone() -> MassUnit {
+    public func stones() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.Stone)
     }
     
-    public func quarter() -> MassUnit {
+    public func quarters() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.Quarter)
     }
     
-    public func ounce() -> MassUnit {
+    public func ounces() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.Ounce)
     }
     
-    public func pound() -> MassUnit {
+    public func pounds() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.Pound)
     }
     
-    public func longHundredweight() -> MassUnit {
+    public func longHundredweights() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.LongHundredweight)
     }
     
-    public func longTon() -> MassUnit {
+    public func longTons() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.LongTon)
     }
     
-    public func shortHundredweight() -> MassUnit {
+    public func shortHundredweights() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.ShortHundredweight)
     }
     
-    public func shortTon() -> MassUnit {
+    public func shortTons() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.ShortTon)
     }
     
@@ -198,59 +192,59 @@ public extension Double {
 
 public extension Int {
     
-    public func milligram() -> MassUnit {
+    public func milligrams() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.Milligram)
     }
     
-    public func gram() -> MassUnit {
+    public func grams() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.Gram)
     }
     
-    public func kilo() -> MassUnit {
+    public func kilos() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.Kilo)
     }
     
-    public func tonne() -> MassUnit {
+    public func tonnes() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.Tonne)
     }
     
-    public func grain() -> MassUnit {
+    public func grains() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.Grain)
     }
     
-    public func dram() -> MassUnit {
+    public func drams() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.Dram)
     }
     
-    public func stone() -> MassUnit {
+    public func stones() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.Stone)
     }
     
-    public func quarter() -> MassUnit {
+    public func quarters() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.Quarter)
     }
     
-    public func ounce() -> MassUnit {
+    public func ounces() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.Ounce)
     }
     
-    public func pound() -> MassUnit {
+    public func pounds() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.Pound)
     }
     
-    public func longHundredweight() -> MassUnit {
+    public func longHundredweights() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.LongHundredweight)
     }
     
-    public func longTon() -> MassUnit {
+    public func longTons() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.LongTon)
     }
     
-    public func shortHundreweight() -> MassUnit {
+    public func shortHundreweights() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.ShortHundredweight)
     }
     
-    public func shortTon() -> MassUnit {
+    public func shortTons() -> MassUnit {
         return MassUnit(value: self, type: MassUnitType.ShortTon)
     }
     

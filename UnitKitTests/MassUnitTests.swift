@@ -185,8 +185,34 @@ class MassUnitTests: XCTestCase {
     // MARK: - CustomStringConvertible
     
     func testDescription() {
-        let unit = MassUnit(value: 1, type: .Gram)
-        XCTAssert(unit.description == "1 g", "got \(unit.description)")
+        let unit = MassUnit(value: -1, type: .Kilo)
+        XCTAssert(unit.description == "-1 kilo", "got \(unit.description)")
+    }
+    
+    // MARK: - Localization
+    
+    func testLocalizedName() {
+        let unitSingle = MassUnit(value: -1, type: .Pound)
+        XCTAssert(unitSingle.localizedNameOfUnitType(nil) == "pound")
+        XCTAssert(unitSingle.localizedNameOfUnitType(NSLocale(localeIdentifier: "en")) == "pound")
+        XCTAssert(unitSingle.localizedNameOfUnitType(NSLocale(localeIdentifier: "da")) == "pund")
+        
+        let unitPlural = MassUnit(value: -2, type: .Pound)
+        XCTAssert(unitPlural.localizedNameOfUnitType(nil) == "pounds")
+        XCTAssert(unitPlural.localizedNameOfUnitType(NSLocale(localeIdentifier: "en")) == "pounds")
+        XCTAssert(unitPlural.localizedNameOfUnitType(NSLocale(localeIdentifier: "da")) == "pund")
+    }
+    
+    func testLocalizedAbbreviation() {
+        let unitSingle = MassUnit(value: -1, type: .Pound)
+        XCTAssert(unitSingle.localizedAbbreviationOfUnitType(nil) == "lb")
+        XCTAssert(unitSingle.localizedAbbreviationOfUnitType(NSLocale(localeIdentifier: "en")) == "lb")
+        XCTAssert(unitSingle.localizedAbbreviationOfUnitType(NSLocale(localeIdentifier: "da")) == "lb")
+        
+        let unitPlural = MassUnit(value: -2, type: .Pound)
+        XCTAssert(unitPlural.localizedAbbreviationOfUnitType(nil) == "lbs")
+        XCTAssert(unitPlural.localizedAbbreviationOfUnitType(NSLocale(localeIdentifier: "en")) == "lbs")
+        XCTAssert(unitPlural.localizedAbbreviationOfUnitType(NSLocale(localeIdentifier: "da")) == "lbs")
     }
     
     // MARK: - Arithmetic
@@ -288,72 +314,72 @@ class MassUnitTests: XCTestCase {
     // MARK: - Double and Int extensions
     
     func testMilligramExtension() {
-        XCTAssert(1.0.milligram().milligramValue == MassUnit(value: 1.0, type: .Milligram).milligramValue)
-        XCTAssert(1.milligram().milligramValue == MassUnit(value: 1, type: .Milligram).milligramValue)
+        XCTAssert(1.0.milligrams().milligramValue == MassUnit(value: 1.0, type: .Milligram).milligramValue)
+        XCTAssert(1.milligrams().milligramValue == MassUnit(value: 1, type: .Milligram).milligramValue)
     }
     
     func testGramExtension() {
-        XCTAssert(1.0.gram().gramValue == MassUnit(value: 1.0, type: .Gram).gramValue)
-        XCTAssert(1.gram().gramValue == MassUnit(value: 1, type: .Gram).gramValue)
+        XCTAssert(1.0.grams().gramValue == MassUnit(value: 1.0, type: .Gram).gramValue)
+        XCTAssert(1.grams().gramValue == MassUnit(value: 1, type: .Gram).gramValue)
     }
     
     func testKiloExtension() {
-        XCTAssert(1.0.kilo().kiloValue == MassUnit(value: 1.0, type: .Kilo).kiloValue)
-        XCTAssert(1.kilo().kiloValue == MassUnit(value: 1, type: .Kilo).kiloValue)
+        XCTAssert(1.0.kilos().kiloValue == MassUnit(value: 1.0, type: .Kilo).kiloValue)
+        XCTAssert(1.kilos().kiloValue == MassUnit(value: 1, type: .Kilo).kiloValue)
     }
     
     func testTonneExtension() {
-        XCTAssert(1.0.tonne().tonneValue == MassUnit(value: 1.0, type: .Tonne).tonneValue)
-        XCTAssert(1.tonne().tonneValue == MassUnit(value: 1, type: .Tonne).tonneValue)
+        XCTAssert(1.0.tonnes().tonneValue == MassUnit(value: 1.0, type: .Tonne).tonneValue)
+        XCTAssert(1.tonnes().tonneValue == MassUnit(value: 1, type: .Tonne).tonneValue)
     }
     
     func testGrainExtension() {
-        XCTAssert(1.0.grain().grainValue == MassUnit(value: 1.0, type: .Grain).grainValue)
-        XCTAssert(1.grain().grainValue == MassUnit(value: 1, type: .Grain).grainValue)
+        XCTAssert(1.0.grains().grainValue == MassUnit(value: 1.0, type: .Grain).grainValue)
+        XCTAssert(1.grains().grainValue == MassUnit(value: 1, type: .Grain).grainValue)
     }
     
     func testDramExtension() {
-        XCTAssert(1.0.dram().dramValue == MassUnit(value: 1.0, type: .Dram).dramValue)
-        XCTAssert(1.dram().dramValue == MassUnit(value: 1, type: .Dram).dramValue)
+        XCTAssert(1.0.drams().dramValue == MassUnit(value: 1.0, type: .Dram).dramValue)
+        XCTAssert(1.drams().dramValue == MassUnit(value: 1, type: .Dram).dramValue)
     }
     
     func testOunceExtension() {
-        XCTAssert(1.0.ounce().ounceValue == MassUnit(value: 1.0, type: .Ounce).ounceValue)
-        XCTAssert(1.ounce().ounceValue == MassUnit(value: 1, type: .Ounce).ounceValue)
+        XCTAssert(1.0.ounces().ounceValue == MassUnit(value: 1.0, type: .Ounce).ounceValue)
+        XCTAssert(1.ounces().ounceValue == MassUnit(value: 1, type: .Ounce).ounceValue)
     }
     
     func testPoundExtension() {
-        XCTAssert(1.0.pound().poundValue == MassUnit(value: 1.0, type: .Pound).poundValue)
-        XCTAssert(1.pound().poundValue == MassUnit(value: 1, type: .Pound).poundValue)
+        XCTAssert(1.0.pounds().poundValue == MassUnit(value: 1.0, type: .Pound).poundValue)
+        XCTAssert(1.pounds().poundValue == MassUnit(value: 1, type: .Pound).poundValue)
     }
     
     func testStoneExtension() {
-        XCTAssert(1.0.stone().stoneValue == MassUnit(value: 1.0, type: .Stone).stoneValue)
-        XCTAssert(1.stone().stoneValue == MassUnit(value: 1, type: .Stone).stoneValue)
+        XCTAssert(1.0.stones().stoneValue == MassUnit(value: 1.0, type: .Stone).stoneValue)
+        XCTAssert(1.stones().stoneValue == MassUnit(value: 1, type: .Stone).stoneValue)
     }
     
     func testQuarterExtension() {
-        XCTAssert(1.0.quarter().quarterValue == MassUnit(value: 1.0, type: .Quarter).quarterValue)
-        XCTAssert(1.quarter().quarterValue == MassUnit(value: 1, type: .Quarter).quarterValue)
+        XCTAssert(1.0.quarters().quarterValue == MassUnit(value: 1.0, type: .Quarter).quarterValue)
+        XCTAssert(1.quarters().quarterValue == MassUnit(value: 1, type: .Quarter).quarterValue)
     }
     
     func testLongHundredWeightExtension() {
-        XCTAssert(1.0.longHundredweight().longHundredweightValue == MassUnit(value: 1.0, type: .LongHundredweight).longHundredweightValue)
-        XCTAssert(1.longHundredweight().longHundredweightValue == MassUnit(value: 1, type: .LongHundredweight).longHundredweightValue)
+        XCTAssert(1.0.longHundredweights().longHundredweightValue == MassUnit(value: 1.0, type: .LongHundredweight).longHundredweightValue)
+        XCTAssert(1.longHundredweights().longHundredweightValue == MassUnit(value: 1, type: .LongHundredweight).longHundredweightValue)
     }
     
     func testLongTonExtension() {
-        XCTAssert(1.0.longTon().longTonValue == MassUnit(value: 1.0, type: .LongTon).longTonValue)
-        XCTAssert(1.longTon().longTonValue == MassUnit(value: 1, type: .LongTon).longTonValue)
+        XCTAssert(1.0.longTons().longTonValue == MassUnit(value: 1.0, type: .LongTon).longTonValue)
+        XCTAssert(1.longTons().longTonValue == MassUnit(value: 1, type: .LongTon).longTonValue)
     }
     
     func testShortHundredWeightExtension() {
-        XCTAssert(1.0.shortHundredweight().shortHundredweightValue == MassUnit(value: 1.0, type: .ShortHundredweight).shortHundredweightValue)
-        XCTAssert(1.shortHundredweight().shortHundredweightValue == MassUnit(value: 1, type: .ShortHundredweight).shortHundredweightValue)
+        XCTAssert(1.0.shortHundredweights().shortHundredweightValue == MassUnit(value: 1.0, type: .ShortHundredweight).shortHundredweightValue)
+        XCTAssert(1.shortHundredweights().shortHundredweightValue == MassUnit(value: 1, type: .ShortHundredweight).shortHundredweightValue)
     }
     
     func testShortTonExtension() {
-        XCTAssert(1.0.shortTon().shortTonValue == MassUnit(value: 1.0, type: .ShortTon).shortTonValue)
-        XCTAssert(1.shortTon().shortTonValue == MassUnit(value: 1, type: .ShortTon).shortTonValue)
+        XCTAssert(1.0.shortTons().shortTonValue == MassUnit(value: 1.0, type: .ShortTon).shortTonValue)
+        XCTAssert(1.shortTons().shortTonValue == MassUnit(value: 1, type: .ShortTon).shortTonValue)
     }
 }

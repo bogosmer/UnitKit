@@ -166,83 +166,83 @@ public struct VolumeUnit: _Unit {
 
 public extension Double {
     
-    public func millilitre() -> VolumeUnit {
+    public func millilitres() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.Millilitre)
     }
     
-    public func litre() -> VolumeUnit {
+    public func litres() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.Litre)
     }
     
-    public func cubicMetre() -> VolumeUnit {
+    public func cubicMetres() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.CubicMetre)
     }
     
-    public func cubicInch() -> VolumeUnit {
+    public func cubicInches() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.CubicInch)
     }
     
-    public func cubicFoot() -> VolumeUnit {
+    public func cubicFeet() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.CubicFoot)
     }
     
-    public func fluidOunce() -> VolumeUnit {
+    public func fluidOunces() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.FluidOunce)
     }
     
-    public func gill() -> VolumeUnit {
+    public func gills() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.Gill)
     }
     
-    public func pint() -> VolumeUnit {
+    public func pints() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.Pint)
     }
     
-    public func quart() -> VolumeUnit {
+    public func quarts() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.Quart)
     }
     
-    public func gallon() -> VolumeUnit {
+    public func gallons() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.Gallon)
     }
     
-    public func bushel() -> VolumeUnit {
+    public func bushels() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.Bushel)
     }
     
-    public func usFluidOunce() -> VolumeUnit {
+    public func usFluidOunces() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.USFluidOunce)
     }
     
-    public func usLiquidGill() -> VolumeUnit {
+    public func usLiquidGills() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.USLiquidGill)
     }
     
-    public func usLiquidPint() -> VolumeUnit {
+    public func usLiquidPints() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.USLiquidPint)
     }
     
-    public func usDryPint() -> VolumeUnit {
+    public func usDryPints() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.USDryPint)
     }
     
-    public func usLiquidQuart() -> VolumeUnit {
+    public func usLiquidQuarts() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.USLiquidQuart)
     }
     
-    public func usDryQuart() -> VolumeUnit {
+    public func usDryQuarts() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.USDryQuart)
     }
     
-    public func usLiquidGallon() -> VolumeUnit {
+    public func usLiquidGallons() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.USLiquidGallon)
     }
     
-    public func usDryGallon() -> VolumeUnit {
+    public func usDryGallons() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.USDryGallon)
     }
     
-    public func usBushel() -> VolumeUnit {
+    public func usBushels() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.USBushel)
     }
 
@@ -252,83 +252,83 @@ public extension Double {
 
 public extension Int {
     
-    public func millilitre() -> VolumeUnit {
+    public func millilitres() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.Millilitre)
     }
     
-    public func litre() -> VolumeUnit {
+    public func litres() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.Litre)
     }
     
-    public func cubicMetre() -> VolumeUnit {
+    public func cubicMetres() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.CubicMetre)
     }
     
-    public func cubicInch() -> VolumeUnit {
+    public func cubicInches() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.CubicInch)
     }
     
-    public func cubicFoot() -> VolumeUnit {
+    public func cubicFeet() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.CubicFoot)
     }
     
-    public func fluidOunce() -> VolumeUnit {
+    public func fluidOunces() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.FluidOunce)
     }
     
-    public func gill() -> VolumeUnit {
+    public func gills() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.Gill)
     }
     
-    public func pint() -> VolumeUnit {
+    public func pints() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.Pint)
     }
     
-    public func quart() -> VolumeUnit {
+    public func quarts() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.Quart)
     }
     
-    public func gallon() -> VolumeUnit {
+    public func gallons() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.Gallon)
     }
     
-    public func bushel() -> VolumeUnit {
+    public func bushels() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.Bushel)
     }
     
-    public func usFluidOunce() -> VolumeUnit {
+    public func usFluidOunces() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.USFluidOunce)
     }
     
-    public func usLiquidGill() -> VolumeUnit {
+    public func usLiquidGills() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.USLiquidGill)
     }
     
-    public func usLiquidPint() -> VolumeUnit {
+    public func usLiquidPints() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.USLiquidPint)
     }
     
-    public func usDryPint() -> VolumeUnit {
+    public func usDryPints() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.USDryPint)
     }
     
-    public func usLiquidQuart() -> VolumeUnit {
+    public func usLiquidQuarts() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.USLiquidQuart)
     }
     
-    public func usDryQuart() -> VolumeUnit {
+    public func usDryQuarts() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.USDryQuart)
     }
     
-    public func usLiquidGallon() -> VolumeUnit {
+    public func usLiquidGallons() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.USLiquidGallon)
     }
     
-    public func usDryGallon() -> VolumeUnit {
+    public func usDryGallons() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.USDryGallon)
     }
     
-    public func usBushel() -> VolumeUnit {
+    public func usBushels() -> VolumeUnit {
         return VolumeUnit(value: self, type: VolumeUnitType.USBushel)
     }
     

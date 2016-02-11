@@ -161,7 +161,33 @@ class AreaUnitTests: XCTestCase {
     
     func testDescription() {
         let unit = AreaUnit(value: 1, type: .SquareCentimetre)
-        XCTAssert(unit.description == "1 cm²", "got \(unit.description)")
+        XCTAssert(unit.description == "1 square centimetre", "got \(unit.description)")
+    }
+    
+    // MARK: - Localization
+    
+    func testLocalizedName() {
+        let unitSingle = AreaUnit(value: 1, type: .SquareCentimetre)
+        XCTAssert(unitSingle.localizedNameOfUnitType(nil) == "square centimetre")
+        XCTAssert(unitSingle.localizedNameOfUnitType(NSLocale(localeIdentifier: "en")) == "square centimetre")
+        XCTAssert(unitSingle.localizedNameOfUnitType(NSLocale(localeIdentifier: "da")) == "kvadratcentimeter")
+        
+        let unitPlural = AreaUnit(value: 2, type: .SquareCentimetre)
+        XCTAssert(unitPlural.localizedNameOfUnitType(nil) == "square centimetres")
+        XCTAssert(unitPlural.localizedNameOfUnitType(NSLocale(localeIdentifier: "en")) == "square centimetres")
+        XCTAssert(unitPlural.localizedNameOfUnitType(NSLocale(localeIdentifier: "da")) == "kvadratcentimeter")
+    }
+    
+    func testLocalizedAbbreviation() {
+        let unitSingle = AreaUnit(value: 1, type: .SquareCentimetre)
+        XCTAssert(unitSingle.localizedAbbreviationOfUnitType(nil) == "cm²")
+        XCTAssert(unitSingle.localizedAbbreviationOfUnitType(NSLocale(localeIdentifier: "en")) == "cm²")
+        XCTAssert(unitSingle.localizedAbbreviationOfUnitType(NSLocale(localeIdentifier: "da")) == "cm²")
+        
+        let unitPlural = AreaUnit(value: 2, type: .SquareCentimetre)
+        XCTAssert(unitPlural.localizedAbbreviationOfUnitType(nil) == "cm²")
+        XCTAssert(unitPlural.localizedAbbreviationOfUnitType(NSLocale(localeIdentifier: "en")) == "cm²")
+        XCTAssert(unitPlural.localizedAbbreviationOfUnitType(NSLocale(localeIdentifier: "da")) == "cm²")
     }
     
     // MARK: - Arithmetic

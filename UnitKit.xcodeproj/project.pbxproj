@@ -23,6 +23,7 @@
 		6F928C371C6BA85800CA2F32 /* VolumeUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F928C361C6BA85800CA2F32 /* VolumeUnitTests.swift */; };
 		6F928C411C6BD9C600CA2F32 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6F928C3C1C6BD9C600CA2F32 /* Localizable.strings */; };
 		6F928C421C6BD9C600CA2F32 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6F928C3F1C6BD9C600CA2F32 /* Localizable.strings */; };
+		6F928C451C6C99A600CA2F32 /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F928C441C6C99A600CA2F32 /* Localize.swift */; };
 		6FE7F2561C4FE8B5005CC6F0 /* UnitKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FE7F24B1C4FE8B5005CC6F0 /* UnitKit.framework */; };
 		6FE7F25B1C4FE8B5005CC6F0 /* MassUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE7F25A1C4FE8B5005CC6F0 /* MassUnitTests.swift */; };
 		6FEEE0931C6B5B2C008071C3 /* UnitArithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEEE0921C6B5B2C008071C3 /* UnitArithmetic.swift */; };
@@ -55,6 +56,7 @@
 		6F928C361C6BA85800CA2F32 /* VolumeUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeUnitTests.swift; sourceTree = "<group>"; };
 		6F928C3D1C6BD9C600CA2F32 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = Localizable.strings; sourceTree = "<group>"; };
 		6F928C401C6BD9C600CA2F32 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		6F928C441C6C99A600CA2F32 /* Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
 		6FE7F24B1C4FE8B5005CC6F0 /* UnitKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UnitKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FE7F2551C4FE8B5005CC6F0 /* UnitKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FE7F25A1C4FE8B5005CC6F0 /* MassUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MassUnitTests.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		6F928C431C6C993C00CA2F32 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
+				6F928C441C6C99A600CA2F32 /* Localize.swift */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				6F0D509B1C6B3C7F00AACD41 /* UnitType.swift in Sources */,
 				6F0D50991C6B3C7F00AACD41 /* VolumeUnitType.swift in Sources */,
 				6F0D50971C6B3C7F00AACD41 /* MassUnitType.swift in Sources */,
+				6F928C451C6C99A600CA2F32 /* Localize.swift in Sources */,
 				6F0D509A1C6B3C7F00AACD41 /* Unit.swift in Sources */,
 				6F0D50931C6B3C7F00AACD41 /* AreaUnitType.swift in Sources */,
 				6F0D50961C6B3C7F00AACD41 /* MassUnit.swift in Sources */,

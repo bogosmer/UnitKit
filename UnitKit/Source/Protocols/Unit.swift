@@ -22,12 +22,32 @@ public protocol Unit: CustomStringConvertible {
     init(value: Int, type: T)
     
     func valueForUnitType(unitType: T) -> NSDecimalNumber
+    
+    func localizedNameOfUnitType(locale: NSLocale?) -> String
+    func localizedAbbreviationOfUnitType(locale: NSLocale?) -> String
 }
 
 public extension Unit {
     
     public var description: String {
-        return "\(valueForUnitType(unitType)) \(unitType.localizedName(nil))"
+        return "\(valueForUnitType(unitType)) \(localizedNameOfUnitType(nil))"
+    }
+    
+    func localizedNameOfUnitType(locale: NSLocale?) -> String {
+        if NSDecimalNumber.one().compare(valueForUnitType(unitType).absoluteValue) == .OrderedAscending {
+            return Localize.localize(String(self.dynamicType) + ".name.plural." + unitType.description, locale: locale)
+        } else {
+            return Localize.localize(String(self.dynamicType) + ".name.single." + unitType.description, locale: locale)
+        }
+        
+    }
+    
+    func localizedAbbreviationOfUnitType(locale: NSLocale?) -> String {
+        if NSDecimalNumber.one().compare(valueForUnitType(unitType).absoluteValue) == .OrderedAscending {
+            return Localize.localize(String(self.dynamicType) + ".abbreviation.plural." + unitType.description, locale: locale)
+        } else {
+            return Localize.localize(String(self.dynamicType) + ".abbreviation.single." + unitType.description, locale: locale)
+        }
     }
 }
 

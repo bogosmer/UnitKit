@@ -8,14 +8,16 @@
 
 import Foundation
 
-public enum VolumeUnitType: UnitType {
+public enum VolumeUnitType: String, UnitType {
     
-    // MARK: - Metric
+    // MARK: - Enum
+    
+    // MARK: Metric
     case Millilitre
     case Litre
     case CubicMetre
     
-    // MARK: - Imperial
+    // MARK: Imperial
     case CubicInch
     case CubicFoot
     case FluidOunce
@@ -25,7 +27,7 @@ public enum VolumeUnitType: UnitType {
     case Gallon
     case Bushel
     
-    // MARK: - US
+    // MARK: US
     case USFluidOunce
     case USLiquidGill
     case USLiquidPint
@@ -36,59 +38,65 @@ public enum VolumeUnitType: UnitType {
     case USDryGallon
     case USBushel
     
-    // MARK: - Public functions
-    // TODO - use localization
-    public func localizedName(locale: NSLocale? = NSLocale.currentLocale()) -> String {
-        return localizedAbbreviation()
+    // MARK: - Public properties
+    
+    public var description:String {
+        return self.rawValue
     }
     
-    // TODO - use localization
-    public func localizedAbbreviation(locale: NSLocale? = NSLocale.currentLocale()) -> String {
-        let result: String
-        switch self {
-        case .Millilitre:
-            result = "ml"
-        case .Litre:
-            result = "l"
-        case .CubicMetre:
-            result = "m³"
-        case .CubicInch:
-            result = "cu in"
-        case .CubicFoot:
-            result = "cu ft"
-        case .FluidOunce:
-            result = "fl oz"
-        case .Gill:
-            result = "gill"
-        case .Pint:
-            result = "pt"
-        case .Quart:
-            result = "qt"
-        case .Gallon:
-            result = "gal"
-        case .Bushel:
-            result = "bu"
-        case .USFluidOunce:
-            result = "fl oz"
-        case .USLiquidGill:
-            result = "liquid gill"
-        case .USLiquidPint:
-            result = "liquid pint"
-        case .USDryPint:
-            result = "dry pint"
-        case .USLiquidQuart:
-            result = "liquid quart"
-        case .USDryQuart:
-            result = "dry pint"
-        case .USLiquidGallon:
-            result = "liquid gallon"
-        case .USDryGallon:
-            result = "dry gallon"
-        case .USBushel:
-            result = "bu"
-        }
-        return result
-    }
+    // MARK: - Public functions
+//    // TODO - use localization
+//    public func localizedName(locale: NSLocale?) -> String {
+//        return localizedAbbreviation(locale)
+//    }
+//    
+//    // TODO - use localization
+//    public func localizedAbbreviation(locale: NSLocale?) -> String {
+//        let result: String
+//        switch self {
+//        case .Millilitre:
+//            result = "ml"
+//        case .Litre:
+//            result = "l"
+//        case .CubicMetre:
+//            result = "m³"
+//        case .CubicInch:
+//            result = "cu in"
+//        case .CubicFoot:
+//            result = "cu ft"
+//        case .FluidOunce:
+//            result = "fl oz"
+//        case .Gill:
+//            result = "gill"
+//        case .Pint:
+//            result = "pt"
+//        case .Quart:
+//            result = "qt"
+//        case .Gallon:
+//            result = "gal"
+//        case .Bushel:
+//            result = "bu"
+//        case .USFluidOunce:
+//            result = "fl oz"
+//        case .USLiquidGill:
+//            result = "liquid gill"
+//        case .USLiquidPint:
+//            result = "liquid pint"
+//        case .USDryPint:
+//            result = "dry pint"
+//        case .USLiquidQuart:
+//            result = "liquid quart"
+//        case .USDryQuart:
+//            result = "dry pint"
+//        case .USLiquidGallon:
+//            result = "liquid gallon"
+//        case .USDryGallon:
+//            result = "dry gallon"
+//        case .USBushel:
+//            result = "bu"
+//        }
+//        return result
+//    }
     
     public func baseUnitTypePerUnit() -> NSDecimalNumber {
         return millilitresPerUnit()

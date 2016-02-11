@@ -83,7 +83,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6F0D50861C6B3C7F00AACD41 /* Implementations */ = {
+		6F0D50861C6B3C7F00AACD41 /* Units */ = {
 			isa = PBXGroup;
 			children = (
 				6F0D50871C6B3C7F00AACD41 /* AreaUnit.swift */,
@@ -95,7 +95,7 @@
 				6F0D508D1C6B3C7F00AACD41 /* VolumeUnit.swift */,
 				6F0D508E1C6B3C7F00AACD41 /* VolumeUnitType.swift */,
 			);
-			path = Implementations;
+			path = Units;
 			sourceTree = "<group>";
 		};
 		6F0D508F1C6B3C7F00AACD41 /* Protocols */ = {
@@ -148,6 +148,13 @@
 			path = en.lproj;
 			sourceTree = "<group>";
 		};
+		6F928C431C6C993C00CA2F32 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		6FE7F2411C4FE8B5005CC6F0 = {
 			isa = PBXGroup;
 			children = (
@@ -193,7 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				6F928C2F1C6B9C2B00CA2F32 /* Extensions */,
-				6F0D50861C6B3C7F00AACD41 /* Implementations */,
+				6F0D50861C6B3C7F00AACD41 /* Units */,
+				6F928C431C6C993C00CA2F32 /* Localization */,
 				6FEEE0911C6B5B15008071C3 /* Operators */,
 				6F0D508F1C6B3C7F00AACD41 /* Protocols */,
 			);

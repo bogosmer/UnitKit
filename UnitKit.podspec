@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   s.name = 'UnitKit'
   s.version = '0.1'
   s.license = 'MIT'
-  s.summary = 'Convenient handling of units of measurement'
+  s.summary = 'Convenience for units of measurement written in Swift'
   s.homepage = 'https://github.com/UnitKit/UnitKit'
   s.authors = { 'Bo Gosmer' => 'bogosmer@gmail.com' }
   s.source = { :git => 'https://github.com/UnitKit/UnitKit.git', :tag => s.version }

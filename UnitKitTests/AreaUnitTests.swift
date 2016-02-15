@@ -323,6 +323,7 @@ class AreaUnitTests: XCTestCase {
     func testSquareKilometreExtension() {
         XCTAssert(1.0.squareKilometres().squareKilometreValue == AreaUnit(value: 1.0, type: .SquareKilometre).squareKilometreValue)
         XCTAssert(1.squareKilometres().squareKilometreValue == AreaUnit(value: 1, type: .SquareKilometre).squareKilometreValue)
+        XCTAssert(1.squareKilometres().squareCentimetreValue.description == "10000000000", "exptected 10000000000 - got \(1.squareKilometres().squareCentimetreValue.description)")
     }
     
     func testSquareInchExtension() {
@@ -348,11 +349,13 @@ class AreaUnitTests: XCTestCase {
     func testSquareMileExtension() {
         XCTAssert(1.0.squareMiles().squareMileValue == AreaUnit(value: 1.0, type: .SquareMile).squareMileValue)
         XCTAssert(1.squareMiles().squareMileValue == AreaUnit(value: 1, type: .SquareMile).squareMileValue)
+        XCTAssert(1.squareMiles().squareCentimetreValue.description == "25899881103.36", "expected 25899881103.36 - got \(1.squareMiles().squareCentimetreValue.description)")
     }
     
     func testSquareNauticalMileExtension() {
         XCTAssert(1.0.squareNauticalMiles().squareNauticalMileValue == AreaUnit(value: 1.0, type: .SquareNauticalMile).squareNauticalMileValue)
         XCTAssert(1.squareNauticalMiles().squareNauticalMileValue == AreaUnit(value: 1, type: .SquareNauticalMile).squareNauticalMileValue)
+        XCTAssert(1.squareNauticalMiles().squareCentimetreValue.description == "34299040000", "expected 34299040000 - got \(1.squareNauticalMiles().squareCentimetreValue.description)")
     }
     
 }

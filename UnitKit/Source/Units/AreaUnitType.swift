@@ -55,7 +55,7 @@ public enum AreaUnitType: String, UnitType {
         case .Hectare:
             result = NSDecimalNumber.integer(1000000)
         case .SquareKilometre:
-            result = NSDecimalNumber.integer(10000000000)
+            result = NSDecimalNumber(mantissa: 1, exponent: 10, isNegative: false)
         case .SquareInch:
             result = NSDecimalNumber.double(6.4516)
         case .SquareFoot:
@@ -65,9 +65,9 @@ public enum AreaUnitType: String, UnitType {
         case .Acre:
             result = NSDecimalNumber.double(40468564.224)
         case .SquareMile:
-            result = NSDecimalNumber.double(25899881103.36)
+            result = NSDecimalNumber(mantissa: 2589988110336, exponent: -2, isNegative: false)
         case .SquareNauticalMile:
-            result = NSDecimalNumber.double(34299040000)
+            result = NSDecimalNumber(mantissa: 3429904, exponent: 4, isNegative: false)
         }
         return result
     }

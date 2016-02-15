@@ -4,6 +4,9 @@
 
 language: objective-c
 osx_image: xcode7.2
+xcode_project: UnitKit.xcodeproj
+xcode_scheme: UnitKit
+xcode_sdk: iphonesimulator
 # cache: cocoapods
 # podfile: Example/Podfile
 before_install:
@@ -12,7 +15,7 @@ before_install:
 # - pod install --project-directory=Example
 
 script:
-- xcodebuild -project UnitKit.xcodeproj -scheme UnitKit -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+- xctool -project UnitKit.xcodeproj -scheme UnitKit -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO build test
 # - xctool test -project UnitKit.xcodeproj -scheme UnitKit -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
 # - set -o pipefail && xctool test -project UnitKit.xcodeproj -scheme UnitKit -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
 # - pod lib lint

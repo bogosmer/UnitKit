@@ -168,12 +168,10 @@ class AreaUnitTests: XCTestCase {
     
     func testLocalizedName() {
         let unitSingle = AreaUnit(value: 1, type: .SquareCentimetre)
-        XCTAssert(unitSingle.localizedNameOfUnitType(nil) == "square centimetre")
         XCTAssert(unitSingle.localizedNameOfUnitType(NSLocale(localeIdentifier: "en")) == "square centimetre")
         XCTAssert(unitSingle.localizedNameOfUnitType(NSLocale(localeIdentifier: "da")) == "kvadratcentimeter")
         
         let unitPlural = AreaUnit(value: 2, type: .SquareCentimetre)
-        XCTAssert(unitPlural.localizedNameOfUnitType(nil) == "square centimetres")
         XCTAssert(unitPlural.localizedNameOfUnitType(NSLocale(localeIdentifier: "en")) == "square centimetres")
         XCTAssert(unitPlural.localizedNameOfUnitType(NSLocale(localeIdentifier: "da")) == "kvadratcentimeter")
     }

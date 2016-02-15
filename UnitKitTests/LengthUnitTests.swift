@@ -154,12 +154,10 @@ class LengthUnitTests: XCTestCase {
     
     func testLocalizedName() {
         let unitSingle = LengthUnit(value: 1, type: .Centimetre)
-        XCTAssert(unitSingle.localizedNameOfUnitType(nil) == "centimetre")
         XCTAssert(unitSingle.localizedNameOfUnitType(NSLocale(localeIdentifier: "en")) == "centimetre")
         XCTAssert(unitSingle.localizedNameOfUnitType(NSLocale(localeIdentifier: "da")) == "centimeter")
         
         let unitPlural = LengthUnit(value: 2, type: .Centimetre)
-        XCTAssert(unitPlural.localizedNameOfUnitType(nil) == "centimetres")
         XCTAssert(unitPlural.localizedNameOfUnitType(NSLocale(localeIdentifier: "en")) == "centimetres")
         XCTAssert(unitPlural.localizedNameOfUnitType(NSLocale(localeIdentifier: "da")) == "centimeter")
     }

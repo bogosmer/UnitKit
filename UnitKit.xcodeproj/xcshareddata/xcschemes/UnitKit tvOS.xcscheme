@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6FE7F24A1C4FE8B5005CC6F0"
+               BlueprintIdentifier = "6F61BC161C71CDE800152041"
                BuildableName = "UnitKit.framework"
-               BlueprintName = "UnitKit"
+               BlueprintName = "UnitKit tvOS"
                ReferencedContainer = "container:UnitKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,16 +26,15 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6FE7F2541C4FE8B5005CC6F0"
-               BuildableName = "UnitKitTests.xctest"
-               BlueprintName = "UnitKitTests"
+               BlueprintIdentifier = "6F61BC1F1C71CDE800152041"
+               BuildableName = "UnitKitTests tvOS.xctest"
+               BlueprintName = "UnitKitTests tvOS"
                ReferencedContainer = "container:UnitKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6FE7F24A1C4FE8B5005CC6F0"
+            BlueprintIdentifier = "6F61BC161C71CDE800152041"
             BuildableName = "UnitKit.framework"
-            BlueprintName = "UnitKit"
+            BlueprintName = "UnitKit tvOS"
             ReferencedContainer = "container:UnitKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6FE7F24A1C4FE8B5005CC6F0"
+            BlueprintIdentifier = "6F61BC161C71CDE800152041"
             BuildableName = "UnitKit.framework"
-            BlueprintName = "UnitKit"
+            BlueprintName = "UnitKit tvOS"
             ReferencedContainer = "container:UnitKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -83,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6FE7F24A1C4FE8B5005CC6F0"
+            BlueprintIdentifier = "6F61BC161C71CDE800152041"
             BuildableName = "UnitKit.framework"
-            BlueprintName = "UnitKit"
+            BlueprintName = "UnitKit tvOS"
             ReferencedContainer = "container:UnitKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

@@ -238,12 +238,10 @@ class VolumeUnitTests: XCTestCase {
     
     func testLocalizedName() {
         let unitSingle = VolumeUnit(value: 1, type: .Millilitre)
-        XCTAssert(unitSingle.localizedNameOfUnitType(nil) == "millilitre")
         XCTAssert(unitSingle.localizedNameOfUnitType(NSLocale(localeIdentifier: "en")) == "millilitre")
         XCTAssert(unitSingle.localizedNameOfUnitType(NSLocale(localeIdentifier: "da")) == "milliliter")
         
         let unitPlural = VolumeUnit(value: 2, type: .Millilitre)
-        XCTAssert(unitPlural.localizedNameOfUnitType(nil) == "millilitres")
         XCTAssert(unitPlural.localizedNameOfUnitType(NSLocale(localeIdentifier: "en")) == "millilitres")
         XCTAssert(unitPlural.localizedNameOfUnitType(NSLocale(localeIdentifier: "da")) == "milliliter")
     }

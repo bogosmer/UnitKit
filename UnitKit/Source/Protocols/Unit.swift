@@ -30,7 +30,7 @@ public protocol Unit: CustomStringConvertible {
 public extension Unit {
     
     public var description: String {
-        return "\(valueForUnitType(unitType)) \(localizedNameOfUnitType(nil))"
+        return "\(valueForUnitType(unitType)) \(localizedNameOfUnitType(NSLocale(localeIdentifier: "en")))"
     }
     
     func localizedNameOfUnitType(locale: NSLocale?) -> String {

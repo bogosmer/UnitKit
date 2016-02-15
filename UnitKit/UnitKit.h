@@ -2,11 +2,11 @@
 //  UnitKit.h
 //  UnitKit
 //
-//  Created by Bo Gosmer on 20/01/2016.
+//  Created by Bo Gosmer on 15/02/2016.
 //  Copyright © 2016 Deadlock Baby. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Cocoa/Cocoa.h>
 
 //! Project version number for UnitKit.
 FOUNDATION_EXPORT double UnitKitVersionNumber;

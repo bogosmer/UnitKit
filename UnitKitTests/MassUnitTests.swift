@@ -193,12 +193,10 @@ class MassUnitTests: XCTestCase {
     
     func testLocalizedName() {
         let unitSingle = MassUnit(value: -1, type: .Pound)
-        XCTAssert(unitSingle.localizedNameOfUnitType(nil) == "pound")
         XCTAssert(unitSingle.localizedNameOfUnitType(NSLocale(localeIdentifier: "en")) == "pound")
         XCTAssert(unitSingle.localizedNameOfUnitType(NSLocale(localeIdentifier: "da")) == "pund")
         
         let unitPlural = MassUnit(value: -2, type: .Pound)
-        XCTAssert(unitPlural.localizedNameOfUnitType(nil) == "pounds")
         XCTAssert(unitPlural.localizedNameOfUnitType(NSLocale(localeIdentifier: "en")) == "pounds")
         XCTAssert(unitPlural.localizedNameOfUnitType(NSLocale(localeIdentifier: "da")) == "pund")
     }

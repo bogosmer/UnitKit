@@ -65,7 +65,7 @@ Each has an associated enum:
 - MassUnitType
 - VolumeUnitType
 
-An instance of a unit is created using one of their 3 initializers that take a value and a type, or by using one of the convience methods in the extenstions mentioned below. 
+An instance of a unit is created using one of their 3 initializers that take a value and a type, or by using one of the convenience methods in the extenstions mentioned below. 
 
 For example:
 
@@ -86,7 +86,7 @@ I discovered some weirdness when using the NSDecimalNumber(double:) initializer.
 ```
 NSDecimalNumber.double(1.001) == NSDecimalNumber(decimal: NSNumber(double: 1.001).decimalValue)
 ```
-I created an internal extension on NSDecimalNumber to get around that issue to when you use the Int or Double initializer on a unit struct, it first becomes an NSNumber and the uses the decimalValue property of that as the initializer parameter for NSDecimalNumber. 
+I created an internal extension on NSDecimalNumber to get around that issue. So when you use the Int or Double initializer on a unit struct, it first becomes an NSNumber, and then uses the decimalValue property of that, as the initializer parameter for NSDecimalNumber. 
 
 So if you're getting some weirdness using the NSDecimalNumber version of the initializers this could be the reason.
 
@@ -94,14 +94,14 @@ So if you're getting some weirdness using the NSDecimalNumber version of the ini
 
 It's possible to specify decimal number behavior in two ways:
 
-1. Default for the kind of unit by using the static sharedDecimalNumberHandler property:
+1: Default for the kind of unit by using the static sharedDecimalNumberHandler property:
 
 ```
 AreaUnit.sharedDecimalNumberHandler = NSDecimalNumberHandler(roundingMode: .RoundPlain, scale: 2, raiseOnExactness: false, raiseOnOverflow: false, raiseOnUnderflow: false, raiseOnDivideByZero: false)
 
 ```
 
-2. On each the instance using the decimalNumberHandler property:
+2: On each the instance using the decimalNumberHandler property:
 
 ```
 let massUnit = MassUnit(value: 1, type. .Gram)
@@ -161,7 +161,10 @@ I used Wikipedia as the source for all the conversions and names. That's as good
 ###Ideas for new features
 
 - Extensions for NSDecimalNumber
-- ?
+- Temperature unit
+- Renaming some types
+- Other stuff
+- Got any ideas?
 
 ###License
 

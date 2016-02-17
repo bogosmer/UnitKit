@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6F61BC321C71CED300152041"
-               BuildableName = "UnitKit OSX.framework"
+               BuildableName = "UnitKit.framework"
                BlueprintName = "UnitKit OSX"
                ReferencedContainer = "container:UnitKit.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6F61BC321C71CED300152041"
-            BuildableName = "UnitKit OSX.framework"
+            BuildableName = "UnitKit.framework"
             BlueprintName = "UnitKit OSX"
             ReferencedContainer = "container:UnitKit.xcodeproj">
          </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6F61BC321C71CED300152041"
-            BuildableName = "UnitKit OSX.framework"
+            BuildableName = "UnitKit.framework"
             BlueprintName = "UnitKit OSX"
             ReferencedContainer = "container:UnitKit.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6F61BC321C71CED300152041"
-            BuildableName = "UnitKit OSX.framework"
+            BuildableName = "UnitKit.framework"
             BlueprintName = "UnitKit OSX"
             ReferencedContainer = "container:UnitKit.xcodeproj">
          </BuildableReference>

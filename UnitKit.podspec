@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'UnitKit'
-  s.version = '0.1'
+  s.version = '0.2'
   s.license = 'MIT'
   s.summary = 'Convenience for units of measurement written in Swift'
   s.homepage = 'https://github.com/bogosmer/UnitKit'

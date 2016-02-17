@@ -1,0 +1,9 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+use_frameworks!
+
+inhibit_all_warnings!
+
+link_with 'UnitKit Example'
+
+pod 'UnitKit', :path => '../'

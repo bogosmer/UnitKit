@@ -13,4 +13,8 @@ Pod::Spec.new do |s|
   s.watchos.deployment_target = '2.0'
 
   s.source_files = 'UnitKit/Source/**/*.swift'
+
+  s.resources = [
+    'UnitKit/Resources/Language/*'
+  ]
 end

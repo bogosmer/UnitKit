@@ -22,18 +22,18 @@ UnitKit supports both CocoaPods and Carthage
 
 #####CocoaPods
 
-To get the newest version up until there is a a version 1.0, put this in your Podfile
+Use UnitKit with CocoaPods by putting this in your Podfile and run 'pod update'
 
 ```
-pod 'UnitKit', '~> 0.1'
+pod 'UnitKit', '0.2'
 ```
 
 #####Carthage
 
-Similarly with Carthage, to get the newest version up until version 1.0, put this in your Cartfile
+Use UnitKit with Carthage by putting this in your cartfile and run 'carthage update'
 
 ```
-github "bogosmer/UnitKit" ~> 0.1
+github "bogosmer/UnitKit" == 0.2
 ```
 
 ###Platforms
